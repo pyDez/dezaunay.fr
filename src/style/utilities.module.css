@@ -1,0 +1,13 @@
+.noMargin {
+    margin: 0;
+}
+
+.primaryColor {
+    color: var(--primaryColor);
+}
+.secondaryColor {
+    color: var(--secondaryColor);
+}
+.secondaryFont {
+    font-family: var(--secondaryFont);
+}
