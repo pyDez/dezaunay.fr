@@ -55,7 +55,7 @@ function useBoop({
         };
     }, [isBooped]);
     
-    const trigger : React.MouseEventHandler<HTMLSpanElement> = React.useCallback((event: any) => {
+    const trigger = React.useCallback((event: any) => {
         setIsBooped(true);
     }, []);
     return {style, trigger};

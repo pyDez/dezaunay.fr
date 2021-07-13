@@ -18,7 +18,7 @@ export default () => {
                       alignItems="center">
                     <Hidden mdUp>
                         <Grid item xs={3} container justifyContent='center' alignItems='center'>
-                            <IconButton onMouseEnter={trigger}>
+                            <IconButton onMouseEnter={trigger} onTouchStart={trigger}>
                                 <animated.span style={style} >
                                         <img src={menu} alt='menu'/>
                                 </animated.span>
