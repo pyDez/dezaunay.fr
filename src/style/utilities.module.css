@@ -11,3 +11,11 @@
 .secondaryFont {
     font-family: var(--secondaryFont);
 }
+
+.secondaryTitle {
+    font-family: var(--secondaryFont);
+    color: var(--bodyColor);
+    font-size: 1.5em;
+    font-weight: normal;
+    text-transform: uppercase;
+}
