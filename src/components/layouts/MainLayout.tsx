@@ -3,11 +3,11 @@ import Menu from '../../assets/menu.svg'
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
-import Icon from '@material-ui/core/Icon';
 import utilities from '../../style/utilities.module.css';
 import useBoop from '../../hooks/UseBoop'
 import {animated} from 'react-spring';
 import { Link } from 'react-router-dom'
+import Bio from '../Bio'
 
 export default () => {
     const {style, trigger} = useBoop({rotation: 15});
@@ -60,8 +60,10 @@ export default () => {
                             & développeur indépendant
                         </div>
                     </Grid>
-
                 </Hidden>
+                <Grid>
+                    <Bio></Bio>
+                </Grid>
             </Grid>
             <Hidden smDown>
                 <Grid item md={7}>

@@ -8,6 +8,9 @@
 .secondaryColor {
     color: var(--secondaryColor);
 }
+.backgroundPrimaryColor {
+    background-color: var(--backgroundPrimaryColor);
+}
 .secondaryFont {
     font-family: var(--secondaryFont);
 }
