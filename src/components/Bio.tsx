@@ -1,5 +1,4 @@
 import Grid from '@material-ui/core/Grid';
-import Icon from '@material-ui/core/Icon';
 import Conception from '../assets/icn-conception.svg'
 import Development from '../assets/icn-dev.svg'
 import Distribution from '../assets/icn-distrib.svg'
@@ -19,7 +18,7 @@ export default () => {
 
     return (
         <>
-            <Grid container alignItems='center' justify='center' style={{margin: '2em'}}>
+            <Grid container alignItems='center' justify='center' style={{margin: '2em 0'}}>
                 <Grid item>
                     <img src={Pyd} alt='me'/>
                 </Grid>

@@ -1,6 +1,6 @@
 // thanks to https://www.joshwcomeau.com/react/boop/ for this very elegant piece of code
 import React from 'react';
-import {SpringValue, useSpring } from 'react-spring';
+import {useSpring } from 'react-spring';
 
 interface springConfig{
     tension: number
@@ -53,7 +53,7 @@ function useBoop({
         return () => {
             window.clearTimeout(timeoutId);
         };
-    }, [isBooped]);
+    }, [isBooped, timing]);
     
     const trigger = React.useCallback((event: any) => {
         setIsBooped(true);

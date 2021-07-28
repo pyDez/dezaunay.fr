@@ -1,0 +1,18 @@
+.activeTab{
+    border-bottom: 3px solid var(--secondaryColor);
+}
+.activeTab>h3.tabTitle {
+    font-weight: bold;
+}
+
+.tabTitle {
+    color: var(--bodyColor);
+    font-size: 1.2em;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 0 1em;
+}
+
+.tabTitle::first-letter {
+    color: var(--secondaryColor);
+}

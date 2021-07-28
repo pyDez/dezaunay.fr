@@ -8,6 +8,7 @@ import useBoop from '../../hooks/UseBoop'
 import {animated} from 'react-spring';
 import { Link } from 'react-router-dom'
 import Bio from '../Bio'
+import MenuLayout from './MenuLayout'
 
 export default () => {
     const {style, trigger} = useBoop({rotation: 15});
@@ -46,7 +47,7 @@ export default () => {
                     </Grid>
                 </Hidden>
                 <Hidden smDown>
-                    <Grid item>
+                    <Grid item style={{display:'flex', height:'4.5em', borderBottom: '1px solid var(--secondaryColor)'}} alignItems='center' >
                         <div
                             className={`${utilities.noMargin} ${utilities.primaryColor} ${utilities.secondaryFont}`}>
                             Architecte &<br/> développeur<br/> indépendant
@@ -67,6 +68,7 @@ export default () => {
             </Grid>
             <Hidden smDown>
                 <Grid item md={7}>
+                    <MenuLayout></MenuLayout>
                 </Grid>
             </Hidden>
         </Grid>

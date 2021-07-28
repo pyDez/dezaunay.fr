@@ -47,15 +47,21 @@ export default () => {
                         <h3 className={utilities.secondaryTitle}>Accueil</h3>
                     </Grid>
                 </Link>
-                <Grid item style={itemStyle}>
-                    <h3 className={utilities.secondaryTitle}>Accompagnement</h3>
-                </Grid>
-                <Grid item style={itemStyle}>
-                    <h3 className={utilities.secondaryTitle}>Portfolio</h3>
-                </Grid>
-                <Grid item style={itemStyle}>
-                    <h3 className={utilities.secondaryTitle}>Contact</h3>
-                </Grid>
+                <Link to='Accompagnement' style={{textDecoration: 'none',}}>
+                    <Grid item style={itemStyle}>
+                        <h3 className={utilities.secondaryTitle}>Accompagnement</h3>
+                    </Grid>
+                </Link>
+                <Link to='Portfolio' style={{textDecoration: 'none',}}>
+                    <Grid item style={itemStyle}>
+                        <h3 className={utilities.secondaryTitle}>Portfolio</h3>
+                    </Grid>
+                </Link>
+                <Link to='Contact' style={{textDecoration: 'none',}}>
+                    <Grid item style={itemStyle}>
+                        <h3 className={utilities.secondaryTitle}>Contact</h3>
+                    </Grid>
+                </Link>
 
             </Grid>
         </>

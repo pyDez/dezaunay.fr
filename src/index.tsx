@@ -10,6 +10,9 @@ ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
           <Route exact path='/' component={App}></Route>
+          <Route exact path='/Accompagnement' component={App}></Route>
+          <Route exact path='/Portfolio' component={App}></Route>
+          <Route exact path='/Contact' component={App}></Route>
           <Route exact path='/menu' component={Menu}></Route>
       </BrowserRouter>
   </React.StrictMode>,
