@@ -22,3 +22,10 @@
     font-weight: normal;
     text-transform: uppercase;
 }
+
+.goToBack {
+    z-index: -1;
+}
+.goToFront {
+    z-index: 2;
+}

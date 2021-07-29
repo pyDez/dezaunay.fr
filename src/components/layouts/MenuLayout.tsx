@@ -22,7 +22,7 @@ export default () => {
     return (
         <>
             <Grid container justify='space-evenly'
-                  style={{marginTop: '2em', borderBottom: '1px solid var(--secondaryColor)'}}>
+                  style={{marginTop: '2em', height:'4.5em', borderBottom: '1px solid var(--secondaryColor)'}}>
                 <Link to={'Accompagnement'} style={{textDecoration: 'none', color: 'inherit'}}>
                     <Grid item className={activeTab === 0 ? menuStyle.activeTab : undefined}>
                         <h3 className={menuStyle.tabTitle}>Accompagnement</h3>
@@ -38,9 +38,7 @@ export default () => {
                         <h3 className={menuStyle.tabTitle}>Contact</h3>
                     </Grid>
                 </Link>
-
             </Grid>
-            {JSON.stringify(pathname)}
         </>
     )
 };

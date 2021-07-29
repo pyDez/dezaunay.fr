@@ -9,14 +9,15 @@ import {animated} from 'react-spring';
 import { Link } from 'react-router-dom'
 import Bio from '../Bio'
 import MenuLayout from './MenuLayout'
+import React from 'react';
+import Counseling from '../Counseling';
 
 export default () => {
     const {style, trigger} = useBoop({rotation: 15});
 
     return (
-        <Grid container>
-            <Grid item sm={12} md={5} container style={{marginTop: '2em'}} justify='space-between'
-                  alignItems="center">
+        <Grid container alignItems='flex-start' className={utilities.goToBack}>
+            <Grid item sm={12} md={5} container style={{marginTop: '2em'}} justify='space-between'>
                 <Hidden mdUp>
                     <Grid item xs={3} container justify='center' alignItems='center'>
                         <Link to='/menu'>
@@ -67,8 +68,9 @@ export default () => {
                 </Grid>
             </Grid>
             <Hidden smDown>
-                <Grid item md={7}>
+                <Grid item md={7} style={{backgroundColor:'var(--backgroundPrimaryColor)', minHeight:'100vh', overflow:'hidden'}}>
                     <MenuLayout></MenuLayout>
+                    <Counseling></Counseling>
                 </Grid>
             </Hidden>
         </Grid>
