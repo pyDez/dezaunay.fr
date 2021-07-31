@@ -6,11 +6,13 @@ import Hidden from '@material-ui/core/Hidden';
 import utilities from '../../style/utilities.module.css';
 import useBoop from '../../hooks/UseBoop'
 import {animated} from 'react-spring';
-import { Link } from 'react-router-dom'
+import { Link, Route, Switch } from 'react-router-dom'
 import Bio from '../Bio'
 import MenuLayout from './MenuLayout'
 import React from 'react';
 import Counseling from '../Counseling';
+import Portfolio from '../Portfolio';
+import Contact from '../Contact';
 
 export default () => {
     const {style, trigger} = useBoop({rotation: 15});
@@ -70,7 +72,20 @@ export default () => {
             <Hidden smDown>
                 <Grid item md={7} style={{backgroundColor:'var(--backgroundPrimaryColor)', minHeight:'100vh', overflow:'hidden'}}>
                     <MenuLayout></MenuLayout>
-                    <Counseling></Counseling>
+                    <Switch>
+                        <Route exact path="/">
+                            <Counseling />
+                        </Route>
+                        <Route exact path="/Accompagnement">
+                            <Counseling />
+                        </Route>
+                        <Route exact path="/Portfolio">
+                            <Portfolio />
+                        </Route>
+                        <Route exact path="/Contact">
+                            <Contact />
+                        </Route>
+                    </Switch>
                 </Grid>
             </Hidden>
         </Grid>
