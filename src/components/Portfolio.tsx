@@ -6,6 +6,10 @@ import Arrow from '../assets/fleche.svg'
 import Quote from '../assets/apostrophe.svg'
 import Lucine from '../assets/Lucine_logo.png'
 import LucinePicture from '../assets/Lucine-Realite-Virtuelle.jpg'
+import Airudit from '../assets/airudit_logo.png'
+import AiruditPicture from '../assets/Airudit_Voice.jpg'
+import SocialFootprint from '../assets/logo social footprint.png'
+import SocialFootprintPicture from '../assets/Social Footprint.jpg'
 import styled from "styled-components";
 
 export default () => {
@@ -191,14 +195,102 @@ export default () => {
                     </Grid>
                 </AccordionDetails>
             </Accordion>
-            <Accordion>
+            <Accordion className={classes.accordion} style={{margin: '3em',}}>
                 <AccordionSummary
-                    expandIcon={<img src={Plus} alt='plus'/>}
+                    expandIcon={
+                        <Icon></Icon>
+                    }
+                    className={classes.accordionHeader}
                 >
+                    <Grid container justify='space-between' alignItems='baseline'>
+                        <Grid item>
+                            Airudit
+                        </Grid>
+                        <Grid item>
+                            <img src={Airudit} alt='Airudit'/>
+                        </Grid>
+                    </Grid>
                 </AccordionSummary>
                 <AccordionDetails>
+                    <Grid container direction='column'>
+                        <Grid item>
+                            <h4 style={{fontSize: '1.5em', fontWeight: 'normal',}}>Airudit développe des agents conversationnels.</h4>
+                        </Grid>
+                        <Grid item container alignItems='center'>
+                            <Grid item md={5}>
+                                <img src={AiruditPicture} alt='Airudit picture'
+                                     style={{maxWidth: '100%', marginRight: '1em'}}/>
+                            </Grid>
+                            <Grid item md={1}>
+                            </Grid>
+                            <Grid item md={6}>
+                                Les agents conversationnels permettant d’interagir avec un matériel
+                                informatique en utilisant <b>le langage naturel</b>. Au cœur de ces agents, afin de leur permettre
+                                de comprendre le langage humain, un moteur sémantique décompose, trie, pèse et
+                                sélectionne ce qui lui semble faire le plus de sens. En constante évolution se moteur
+                                agrège un ensemble de briques technologiques lui permettant d’affiner toujours plus sa
+                                compréhension.
+                            </Grid>
+                        </Grid>
+                        <Grid item container>
+                            <Grid item md={2}
+                                  style={{borderBottom: '1px solid var(--secondaryColor)', margin: '2em 0 1em 0'}}>
+                            </Grid>
+                        </Grid>
+                        <Grid item>
+                            En tant que Leader technique de cette petite équipe de développeur, j’ai
+                            été au centre du changement d’échelle de ce moteur sémantique.<br/>
+                            Un simple
+                            apprentissage d’un nouveau domaine grâce à une cartographie correctement formaté, une ontologie,
+                            ouvrait un nouveau champ de discussion possible avec la machine. <br/>
+                            Mon travail à
+                            également rendu possible l’accès à l’agent conversationnel sur de nouveaux supports : web,
+                            serveur vocale, internet des objets.
+                        </Grid>
+                    </Grid>
                 </AccordionDetails>
             </Accordion>
+            <Accordion className={classes.accordion} style={{margin: '3em',}}>
+            <AccordionSummary
+                expandIcon={
+                    <Icon></Icon>
+                }
+                className={classes.accordionHeader}
+            >
+                <Grid container justify='space-between' alignItems='baseline'>
+                    <Grid item>
+                        Social Footprint
+                    </Grid>
+                    <Grid item>
+                        <img src={SocialFootprint} alt='SocialFootprint'/>
+                    </Grid>
+                </Grid>
+            </AccordionSummary>
+            <AccordionDetails>
+                <Grid container direction='column'>
+                    <Grid item>
+                        <h4 style={{fontSize: '1.5em', fontWeight: 'normal',}}>
+                            Social Footprint est un outil à destination des influenceurs présents sur les réseaux
+                            sociaux</h4>
+                    </Grid>
+                    <Grid item container alignItems='center'>
+                        <Grid item md={5}>
+                            <img src={SocialFootprintPicture} alt='SocialFootprint picture'
+                                 style={{maxWidth: '100%', marginRight: '1em'}}/>
+                        </Grid>
+                        <Grid item md={1}>
+                        </Grid>
+                        <Grid item md={6}>
+                            Social Footprint permet d’identifier objectivement les domaines et la puissance de son
+                            impact sur sa communauté. Cette aventure entrepreneuriale fut riche d’un point de vue
+                            business autant que d’un point de vue technique. La perfection de l’outil et mon incapacité
+                            à le vendre ont prouvé que j’avais une plus grande appétence pour le second que pour le
+                            premier.
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </AccordionDetails>
+        </Accordion>
         </>
     )
 };
