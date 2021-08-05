@@ -18,8 +18,8 @@ export default () => {
     const {style, trigger} = useBoop({rotation: 15});
 
     return (
-        <Grid container alignItems='flex-start' className={utilities.goToBack}>
-            <Grid item sm={12} md={5} container style={{marginTop: '2em'}} justify='space-between'>
+        <Grid container className={utilities.goToBack} alignItems='stretch'>
+            <Grid item sm={12} md={5} container style={{marginTop: '2em'}} justify='space-between' alignItems='flex-start' alignContent='flex-start'>
                 <Hidden mdUp>
                     <Grid item xs={3} container justify='center' alignItems='center'>
                         <Link to='/menu'>
@@ -50,7 +50,7 @@ export default () => {
                     </Grid>
                 </Hidden>
                 <Hidden smDown>
-                    <Grid item style={{display:'flex', height:'4.5em', borderBottom: '1px solid var(--secondaryColor)'}} alignItems='center' >
+                    <Grid item style={{display:'flex', height:'4.5em', borderBottom: '1px solid var(--secondaryColor)', alignItems:'center'}}>
                         <div
                             className={`${utilities.noMargin} ${utilities.primaryColor} ${utilities.secondaryFont}`}>
                             Architecte &<br/> développeur<br/> indépendant
@@ -65,7 +65,7 @@ export default () => {
                         </div>
                     </Grid>
                 </Hidden>
-                <Grid>
+                <Grid container alignItems='flex-start'>
                     <Bio></Bio>
                 </Grid>
             </Grid>
