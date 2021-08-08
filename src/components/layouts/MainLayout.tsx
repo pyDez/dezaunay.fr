@@ -67,6 +67,11 @@ export default () => {
                 </Hidden>
                 <Grid container alignItems='flex-start'>
                     <Bio></Bio>
+                    <Hidden mdUp>
+                        <Counseling/>
+                        <Portfolio/>
+                        <Contact />
+                    </Hidden>
                 </Grid>
             </Grid>
             <Hidden smDown>

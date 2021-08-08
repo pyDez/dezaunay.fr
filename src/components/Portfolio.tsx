@@ -1,4 +1,4 @@
-import {Accordion, AccordionDetails, AccordionSummary, createStyles, Grid, makeStyles} from "@material-ui/core";
+import {Accordion, AccordionDetails, AccordionSummary, createStyles, Grid, makeStyles, Hidden} from "@material-ui/core";
 import React from "react";
 import Plus from '../assets/ouvrir.svg'
 import Minus from '../assets/fermer.svg'
@@ -9,8 +9,9 @@ import LucinePicture from '../assets/Lucine-Realite-Virtuelle.jpg'
 import Airudit from '../assets/airudit_logo.png'
 import AiruditPicture from '../assets/Airudit_Voice.jpg'
 import SocialFootprint from '../assets/logo social footprint.png'
-import SocialFootprintPicture from '../assets/Social Footprint.jpg'
+import SocialFootprintPicture from '../assets/Social Footprint.png'
 import styled from "styled-components";
+import utilities from '../style/utilities.module.css';
 
 export default () => {
     const Icon = styled((props: any) => (
@@ -40,16 +41,17 @@ export default () => {
         <li {...props}>
         </li>
     ))`
-    & {
-      paddingLeft: 1.3em;
-      margin: 2em 2em 2em 0;
-    }
-    &:before {
-      content: url(${Arrow});
-      display: inline-block;
-      marginLeft: -1.3em; 
-      width: 1.3em;
-    }
+      & {
+        paddingLeft: 1.3em;
+        margin: 2em 2em 2em 0;
+      }
+
+      &:before {
+        content: url(${Arrow});
+        display: inline-block;
+        marginLeft: -1.3em;
+        width: 1.3em;
+      }
     `;
 
 
@@ -78,7 +80,19 @@ export default () => {
 
     const classes = useStyles();
     return (
-        <>
+        <div>
+            <Hidden mdUp>
+                <span style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    marginTop: '3em',
+                }}>
+                    <h2 className={utilities.secondaryTitle} style={{
+                        borderBottom: '1px solid var(--secondaryColor)',
+                        padding: '0.5em 1em'
+                    }}>Portfolio</h2>
+                </span>
+            </Hidden>
             <Accordion className={classes.accordion} style={{margin: '3em',}}>
                 <AccordionSummary
                     expandIcon={
@@ -162,7 +176,8 @@ export default () => {
                                     <ListItem> Plateforme modulaire, testée, scalable et sécurisée</ListItem>
                                     <ListItem> Equipe structurée, performante et autonome</ListItem>
                                     <ListItem> Audits techniques ayant mené à une levée de fonds</ListItem>
-                                    <ListItem> Deux articles scientifiques en cours de revue dans le domaine du traitement
+                                    <ListItem> Deux articles scientifiques en cours de revue dans le domaine du
+                                        traitement
                                         d’images par réseaux de neurones
                                     </ListItem>
                                     <ListItem> Une posture managériale plébiscitée dans un contexte mouvant</ListItem>
@@ -177,8 +192,9 @@ export default () => {
                                 }}>Témoignage :</h5>
                                 <div><b>Paul Duchâteau</b></div>
                                 <div>Directeur Produit chez Lucine</div>
-                                <p style={{position:'relative', paddingTop:'1.6em', zIndex:1,}}>
-                                    <img src={Quote} alt='quote' style={{position:'absolute', left: '-1em', top: '0', zIndex:-1}}/>
+                                <p style={{position: 'relative', paddingTop: '1.6em', zIndex: 1,}}>
+                                    <img src={Quote} alt='quote'
+                                         style={{position: 'absolute', left: '-1em', top: '0', zIndex: -1}}/>
                                     <span>
                                         J'ai travaillé avec Pierre-Yves au sein de la société Lucine.
                                         Il a dessiné l'intégralité de l'architecture logicielle, construit une équipe de développement / RSI / Devops robuste
@@ -189,7 +205,7 @@ export default () => {
                                         Je recommande vivement PY pour ses compétences techniques, mais également son management bienveillant et empathique,
                                         ainsi que son sang froid à toute épreuve.
                                     </span>
-                                    </p>
+                                </p>
                             </Grid>
                         </Grid>
                     </Grid>
@@ -214,7 +230,8 @@ export default () => {
                 <AccordionDetails>
                     <Grid container direction='column'>
                         <Grid item>
-                            <h4 style={{fontSize: '1.5em', fontWeight: 'normal',}}>Airudit développe des agents conversationnels.</h4>
+                            <h4 style={{fontSize: '1.5em', fontWeight: 'normal',}}>Airudit développe des agents
+                                conversationnels.</h4>
                         </Grid>
                         <Grid item container alignItems='center'>
                             <Grid item md={5}>
@@ -225,7 +242,8 @@ export default () => {
                             </Grid>
                             <Grid item md={6}>
                                 Les agents conversationnels permettant d’interagir avec un matériel
-                                informatique en utilisant <b>le langage naturel</b>. Au cœur de ces agents, afin de leur permettre
+                                informatique en utilisant <b>le langage naturel</b>. Au cœur de ces agents, afin de leur
+                                permettre
                                 de comprendre le langage humain, un moteur sémantique décompose, trie, pèse et
                                 sélectionne ce qui lui semble faire le plus de sens. En constante évolution se moteur
                                 agrège un ensemble de briques technologiques lui permettant d’affiner toujours plus sa
@@ -241,7 +259,8 @@ export default () => {
                             En tant que Leader technique de cette petite équipe de développeur, j’ai
                             été au centre du changement d’échelle de ce moteur sémantique.<br/>
                             Un simple
-                            apprentissage d’un nouveau domaine grâce à une cartographie correctement formaté, une ontologie,
+                            apprentissage d’un nouveau domaine grâce à une cartographie correctement formaté, une
+                            ontologie,
                             ouvrait un nouveau champ de discussion possible avec la machine. <br/>
                             Mon travail à
                             également rendu possible l’accès à l’agent conversationnel sur de nouveaux supports : web,
@@ -251,46 +270,47 @@ export default () => {
                 </AccordionDetails>
             </Accordion>
             <Accordion className={classes.accordion} style={{margin: '3em',}}>
-            <AccordionSummary
-                expandIcon={
-                    <Icon></Icon>
-                }
-                className={classes.accordionHeader}
-            >
-                <Grid container justify='space-between' alignItems='baseline'>
-                    <Grid item>
-                        Social Footprint
-                    </Grid>
-                    <Grid item>
-                        <img src={SocialFootprint} alt='SocialFootprint'/>
-                    </Grid>
-                </Grid>
-            </AccordionSummary>
-            <AccordionDetails>
-                <Grid container direction='column'>
-                    <Grid item>
-                        <h4 style={{fontSize: '1.5em', fontWeight: 'normal',}}>
-                            Social Footprint est un outil à destination des influenceurs présents sur les réseaux
-                            sociaux</h4>
-                    </Grid>
-                    <Grid item container alignItems='center'>
-                        <Grid item md={5}>
-                            <img src={SocialFootprintPicture} alt='SocialFootprint picture'
-                                 style={{maxWidth: '100%', marginRight: '1em'}}/>
+                <AccordionSummary
+                    expandIcon={
+                        <Icon></Icon>
+                    }
+                    className={classes.accordionHeader}
+                >
+                    <Grid container justify='space-between' alignItems='baseline'>
+                        <Grid item>
+                            Social Footprint
                         </Grid>
-                        <Grid item md={1}>
-                        </Grid>
-                        <Grid item md={6}>
-                            Social Footprint permet d’identifier objectivement les domaines et la puissance de son
-                            impact sur sa communauté. Cette aventure entrepreneuriale fut riche d’un point de vue
-                            business autant que d’un point de vue technique. La perfection de l’outil et mon incapacité
-                            à le vendre ont prouvé que j’avais une plus grande appétence pour le second que pour le
-                            premier.
+                        <Grid item>
+                            <img src={SocialFootprint} alt='SocialFootprint'/>
                         </Grid>
                     </Grid>
-                </Grid>
-            </AccordionDetails>
-        </Accordion>
-        </>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Grid container direction='column'>
+                        <Grid item>
+                            <h4 style={{fontSize: '1.5em', fontWeight: 'normal',}}>
+                                Social Footprint mesure l'impact des influenceurs présents sur les réseaux
+                                sociaux.</h4>
+                        </Grid>
+                        <Grid item container alignItems='center'>
+                            <Grid item md={5}>
+                                <img src={SocialFootprintPicture} alt='SocialFootprint picture'
+                                     style={{maxWidth: '100%', marginRight: '1em'}}/>
+                            </Grid>
+                            <Grid item md={1}>
+                            </Grid>
+                            <Grid item md={6}>
+                                Social Footprint permet d’identifier objectivement les domaines et la puissance de son
+                                impact sur sa communauté. Cette aventure entrepreneuriale fut riche d’un point de vue
+                                business autant que d’un point de vue technique. La perfection de l’outil et mon
+                                incapacité
+                                à le vendre ont prouvé que j’avais une plus grande appétence pour le second que pour le
+                                premier.
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </AccordionDetails>
+            </Accordion>
+        </div>
     )
 };
