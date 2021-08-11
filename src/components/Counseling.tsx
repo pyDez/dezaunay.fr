@@ -93,7 +93,7 @@ export default () => {
     }
 
     return (
-        <div style={{position: 'relative', marginTop: '3em'}}>
+        <div style={{position: 'relative', marginTop: '3em'}} id='Accompagnement'>
             <img style={{position: 'absolute', width: '100%', marginTop: '1em'}}
                  src={Lightrays} alt='Lightrays'/>
             <Grid container direction='column' alignItems='center'>

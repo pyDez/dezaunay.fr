@@ -6,16 +6,26 @@ import Hidden from '@material-ui/core/Hidden';
 import utilities from '../../style/utilities.module.css';
 import useBoop from '../../hooks/UseBoop'
 import {animated} from 'react-spring';
-import {Link, Route, Switch} from 'react-router-dom'
+import {Link, Route, Switch, useLocation} from 'react-router-dom'
 import Bio from '../Bio'
 import MenuLayout from './MenuLayout'
-import React from 'react';
+import React, { useEffect } from 'react';
 import Counseling from '../Counseling';
 import Portfolio from '../Portfolio';
 import Contact from '../Contact';
 
 export default () => {
     const {style, trigger} = useBoop({rotation: 15});
+    const location = useLocation();
+    useEffect(() => {
+        setTimeout(() => {
+        const element = document.getElementById(location.pathname.replace("/", ""));
+        window.scrollTo({
+                behavior: element ? "smooth" : "auto",
+                top: element ? element.offsetTop : 0
+            });
+        }, 100);
+    }, [location]);
 
     return (
         <Grid container className={utilities.goToBack} alignItems='stretch'>

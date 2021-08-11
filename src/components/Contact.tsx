@@ -1,4 +1,4 @@
-import {Grid, Hidden, IconButton} from "@material-ui/core";
+import {Grid, Hidden} from "@material-ui/core";
 import React from "react";
 import Ladaux from '../assets/photo-contact.png'
 import Email from '../assets/mail.svg'
@@ -6,7 +6,6 @@ import Phone from '../assets/phone.svg'
 import Pin from '../assets/pin.svg'
 import useBoop from "../hooks/UseBoop";
 import {animated} from "react-spring";
-import {Link} from "react-router-dom";
 import utilities from '../style/utilities.module.css';
 
 export default () => {
@@ -27,7 +26,7 @@ export default () => {
                     }}>Contact</h2>
                 </span>
             </Hidden>
-            <Grid container alignItems='center' style={{marginTop: '5em', paddingRight: '2em'}}>
+            <Grid container alignItems='center' style={{marginTop: '5em', paddingRight: '2em'}} id='Contact'>
 
                 <Grid container item md={8} style={{padding: '0 3em', flexWrap: 'nowrap',}}
                       direction='column'>
