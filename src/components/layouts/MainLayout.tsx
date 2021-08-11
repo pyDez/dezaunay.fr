@@ -6,7 +6,7 @@ import Hidden from '@material-ui/core/Hidden';
 import utilities from '../../style/utilities.module.css';
 import useBoop from '../../hooks/UseBoop'
 import {animated} from 'react-spring';
-import { Link, Route, Switch } from 'react-router-dom'
+import {Link, Route, Switch} from 'react-router-dom'
 import Bio from '../Bio'
 import MenuLayout from './MenuLayout'
 import React from 'react';
@@ -19,7 +19,8 @@ export default () => {
 
     return (
         <Grid container className={utilities.goToBack} alignItems='stretch'>
-            <Grid item sm={12} md={5} container style={{marginTop: '2em'}} justify='space-between' alignItems='flex-start' alignContent='flex-start'>
+            <Grid item sm={12} md={5} container style={{marginTop: '2em'}} justify='space-between'
+                  alignItems='flex-start' alignContent='flex-start'>
                 <Hidden mdUp>
                     <Grid item xs={3} container justify='center' alignItems='center'>
                         <Link to='/menu'>
@@ -50,7 +51,12 @@ export default () => {
                     </Grid>
                 </Hidden>
                 <Hidden smDown>
-                    <Grid item style={{display:'flex', height:'4.5em', borderBottom: '1px solid var(--secondaryColor)', alignItems:'center'}}>
+                    <Grid item style={{
+                        display: 'flex',
+                        height: '4.5em',
+                        borderBottom: '1px solid var(--secondaryColor)',
+                        alignItems: 'center'
+                    }}>
                         <div
                             className={`${utilities.noMargin} ${utilities.primaryColor} ${utilities.secondaryFont}`}>
                             Architecte &<br/> développeur<br/> indépendant
@@ -65,30 +71,36 @@ export default () => {
                         </div>
                     </Grid>
                 </Hidden>
-                <Grid container alignItems='flex-start' style={{backgroundColor:'var(--backgroundPrimaryColor)'}}>
+                <Grid container alignItems='flex-start' >
                     <Bio></Bio>
                     <Hidden mdUp>
-                        <Counseling/>
-                        <Portfolio/>
-                        <Contact />
+                        <div style={{backgroundColor: 'var(--backgroundPrimaryColor)'}}>
+                            <Counseling/>
+                            <Portfolio/>
+                            <Contact/>
+                        </div>
                     </Hidden>
                 </Grid>
             </Grid>
             <Hidden smDown>
-                <Grid item md={7} style={{backgroundColor:'var(--backgroundPrimaryColor)', minHeight:'100vh', overflow:'hidden'}}>
+                <Grid item md={7} style={{
+                    backgroundColor: 'var(--backgroundPrimaryColor)',
+                    minHeight: '100vh',
+                    overflow: 'hidden'
+                }}>
                     <MenuLayout></MenuLayout>
                     <Switch>
                         <Route exact path="/">
-                            <Counseling />
+                            <Counseling/>
                         </Route>
                         <Route exact path="/Accompagnement">
-                            <Counseling />
+                            <Counseling/>
                         </Route>
                         <Route exact path="/Portfolio">
-                            <Portfolio />
+                            <Portfolio/>
                         </Route>
                         <Route exact path="/Contact">
-                            <Contact />
+                            <Contact/>
                         </Route>
                     </Switch>
                 </Grid>
