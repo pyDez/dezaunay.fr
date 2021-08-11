@@ -65,7 +65,7 @@ export default () => {
                         </div>
                     </Grid>
                 </Hidden>
-                <Grid container alignItems='flex-start'>
+                <Grid container alignItems='flex-start' style={{backgroundColor:'var(--backgroundPrimaryColor)'}}>
                     <Bio></Bio>
                     <Hidden mdUp>
                         <Counseling/>

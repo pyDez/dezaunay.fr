@@ -1,4 +1,4 @@
-import {Accordion, AccordionDetails, AccordionSummary, createStyles, Grid, makeStyles, Hidden} from "@material-ui/core";
+import {Accordion, AccordionDetails, AccordionSummary, createStyles, Grid, makeStyles, Hidden, IconButton} from "@material-ui/core";
 import React from "react";
 import Plus from '../assets/ouvrir.svg'
 import Minus from '../assets/fermer.svg'
@@ -12,12 +12,21 @@ import SocialFootprint from '../assets/logo social footprint.png'
 import SocialFootprintPicture from '../assets/Social Footprint.png'
 import styled from "styled-components";
 import utilities from '../style/utilities.module.css';
+import { animated } from "react-spring";
+import useBoop from "../hooks/UseBoop";
 
 export default () => {
+    const {style, trigger} = useBoop({rotation: 15});
+
     const Icon = styled((props: any) => (
         <div {...props}>
-            <img src={Plus} alt='plus' className="expanded"/>
-            <img src={Minus} alt='minus' className="collapsed"/>
+            <IconButton className="expanded">
+                    <animated.img style={style} src={Plus} alt='plus'/>
+            </IconButton>
+            <IconButton onMouseEnter={trigger} onTouchStart={trigger} className="collapsed">
+                <animated.img style={style} src={Minus} alt='minus'/>
+            </IconButton>
+
         </div>
     ))`
       & > .expanded {
@@ -99,6 +108,7 @@ export default () => {
                         <Icon></Icon>
                     }
                     className={classes.accordionHeader}
+                    onMouseEnter={trigger} onTouchStart={trigger}
                 >
                     <Grid container justify='space-between' alignItems='baseline'>
                         <Grid item>
@@ -217,6 +227,7 @@ export default () => {
                         <Icon></Icon>
                     }
                     className={classes.accordionHeader}
+                    onMouseEnter={trigger} onTouchStart={trigger}
                 >
                     <Grid container justify='space-between' alignItems='baseline'>
                         <Grid item>
@@ -275,6 +286,7 @@ export default () => {
                         <Icon></Icon>
                     }
                     className={classes.accordionHeader}
+                    onMouseEnter={trigger} onTouchStart={trigger}
                 >
                     <Grid container justify='space-between' alignItems='baseline'>
                         <Grid item>

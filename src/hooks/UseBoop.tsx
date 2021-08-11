@@ -16,11 +16,6 @@ interface useBoopConfig{
     springConfig?: springConfig
 }
 
-// interface useBoop{
-//     style : {transform: SpringValue<string>}
-//     trigger : React.MouseEventHandler<HTMLElement>
-// }
-
 function useBoop({
                      x = 0,
                      y = 0,
