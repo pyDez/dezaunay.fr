@@ -35,7 +35,7 @@ export default () => {
                              style={{width: '100%',}}/>
                     </Grid>
                 </Grid>
-                <Grid container item md={4} xs={12}  style={{position: 'relative', marginBottom:'2em',}} justifyContent='center'>
+                <Grid container item md={4} xs={12}  style={{position: 'relative', marginBottom:'2em',}} justify='center'>
                     <Grid item>
                         <div style={{
                             borderBottom: '1px solid var(--secondaryColor)',
@@ -78,7 +78,8 @@ export default () => {
                             <p>
                                 <a href="https://www.openstreetmap.org/?mlat=44.70077&mlon=-0.24410#map=18/44.70078/-0.24410"
                                    target='_blank' onMouseEnter={pinBoop.trigger} onTouchStart={pinBoop.trigger}
-                                   style={{color: 'var(--bodyColor)', textDecoration: 'none'}}>
+                                   style={{color: 'var(--bodyColor)', textDecoration: 'none'}}
+                                    rel='noreferrer'>
                                     <Grid container alignItems='center'>
                                         <Grid item style={{marginRight: '1em', fontSize: '1.4em'}}>
                                             <animated.img src={Pin} alt='pin' style={pinBoop.style}/>

@@ -1,7 +1,5 @@
 import React from 'react';
-import {useTheme} from '@material-ui/core/styles';
 import MobileStepper from '@material-ui/core/MobileStepper';
-import Button from '@material-ui/core/Button';
 import ArrowLeft from '../assets/arrow-long-left.svg';
 import ArrowRight from '../assets/arrow-long-right.svg';
 import styled from 'styled-components';

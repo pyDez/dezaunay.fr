@@ -1,4 +1,4 @@
-import {Accordion, AccordionDetails, AccordionSummary, createStyles, Grid, makeStyles, Hidden, IconButton} from "@material-ui/core";
+import {Accordion, AccordionDetails, AccordionSummary, Grid, makeStyles, Hidden, IconButton} from "@material-ui/core";
 import React from "react";
 import Plus from '../assets/ouvrir.svg'
 import Minus from '../assets/fermer.svg'

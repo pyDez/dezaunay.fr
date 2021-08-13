@@ -39,10 +39,6 @@ export default () => {
         })
     }
 
-    const changeStep = (newStep: number) => {
-        setActiveStep(newStep);
-    }
-
     interface StepProps {
         StepNumber: number,
     }
