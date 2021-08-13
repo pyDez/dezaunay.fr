@@ -6,7 +6,7 @@ import utilities from '../style/utilities.module.css';
 import Stepper from "./Stepper";
 import {animated, useSpring} from "react-spring";
 
-export default () => {
+const Counselling = () => {
     const titleStyle: React.CSSProperties = {
         fontFamily: 'var(--secondaryFont)',
         fontSize: '1.3em',
@@ -113,3 +113,5 @@ export default () => {
         </div>
     )
 };
+
+export default Counselling;

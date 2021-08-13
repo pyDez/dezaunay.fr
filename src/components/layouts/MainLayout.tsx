@@ -14,7 +14,7 @@ import Counseling from '../Counseling';
 import Portfolio from '../Portfolio';
 import Contact from '../Contact';
 
-export default () => {
+const MainLayout = () => {
     const {style, trigger} = useBoop({rotation: 15});
     const location = useLocation();
     useEffect(() => {
@@ -118,3 +118,5 @@ export default () => {
         </Grid>
     );
 };
+
+export default MainLayout;

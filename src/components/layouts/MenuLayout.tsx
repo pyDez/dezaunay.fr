@@ -2,7 +2,7 @@ import Grid from '@material-ui/core/Grid'
 import {useLocation, Link} from 'react-router-dom'
 import menuStyle from '../../style/menu.module.css';
 
-export default () => {
+const MenuLayout = () => {
     const {pathname} = useLocation()
     let activeTab = 0;
     switch (pathname) {
@@ -42,3 +42,5 @@ export default () => {
         </>
     )
 };
+
+export default MenuLayout;

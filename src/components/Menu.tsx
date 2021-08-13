@@ -7,7 +7,7 @@ import useBoop from '../hooks/UseBoop'
 import {animated} from 'react-spring';
 import {Link} from 'react-router-dom'
 
-export default () => {
+const Menu = () => {
     const itemStyle: React.CSSProperties = {
         borderBottom: '1px solid var(--secondaryColor)',
         width: '100%',
@@ -67,3 +67,5 @@ export default () => {
         </>
     );
 };
+
+export default Menu;

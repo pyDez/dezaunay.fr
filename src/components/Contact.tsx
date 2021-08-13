@@ -8,7 +8,7 @@ import useBoop from "../hooks/UseBoop";
 import {animated} from "react-spring";
 import utilities from '../style/utilities.module.css';
 
-export default () => {
+const Contact = () => {
     const phoneBoop = useBoop({rotation: 15});
     const emailBoop = useBoop({rotation: 15});
     const pinBoop = useBoop({rotation: 15});
@@ -18,7 +18,7 @@ export default () => {
                 <span style={{
                     display: 'flex',
                     justifyContent: 'center',
-                    margin:'3em auto 0 auto',
+                    margin: '3em auto 0 auto',
                 }}>
                     <h2 className={utilities.secondaryTitle} style={{
                         borderBottom: '1px solid var(--secondaryColor)',
@@ -31,11 +31,12 @@ export default () => {
                 <Grid container item md={8} style={{padding: '0 3em', flexWrap: 'nowrap',}}
                       direction='column'>
                     <Grid item style={{height: '100%',}}>
-                        <img src={Ladaux} alt='contact picture'
+                        <img src={Ladaux} alt='contact'
                              style={{width: '100%',}}/>
                     </Grid>
                 </Grid>
-                <Grid container item md={4} xs={12}  style={{position: 'relative', marginBottom:'2em',}} justify='center'>
+                <Grid container item md={4} xs={12} style={{position: 'relative', marginBottom: '2em',}}
+                      justify='center'>
                     <Grid item>
                         <div style={{
                             borderBottom: '1px solid var(--secondaryColor)',
@@ -79,7 +80,7 @@ export default () => {
                                 <a href="https://www.openstreetmap.org/?mlat=44.70077&mlon=-0.24410#map=18/44.70078/-0.24410"
                                    target='_blank' onMouseEnter={pinBoop.trigger} onTouchStart={pinBoop.trigger}
                                    style={{color: 'var(--bodyColor)', textDecoration: 'none'}}
-                                    rel='noreferrer'>
+                                   rel='noreferrer'>
                                     <Grid container alignItems='center'>
                                         <Grid item style={{marginRight: '1em', fontSize: '1.4em'}}>
                                             <animated.img src={Pin} alt='pin' style={pinBoop.style}/>
@@ -106,3 +107,5 @@ export default () => {
         </>
     )
 };
+
+export default Contact;

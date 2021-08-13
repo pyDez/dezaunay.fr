@@ -15,7 +15,7 @@ import utilities from '../style/utilities.module.css';
 import { animated } from "react-spring";
 import useBoop from "../hooks/UseBoop";
 
-export default () => {
+const Portfolio = () => {
     const {style, trigger} = useBoop({rotation: 15});
 
     const Icon = styled((props: any) => (
@@ -127,7 +127,7 @@ export default () => {
                         </Grid>
                         <Grid item container alignItems='center'>
                             <Grid item md={5}>
-                                <img src={LucinePicture} alt='Lucine picture'
+                                <img src={LucinePicture} alt='Lucine'
                                      style={{maxWidth: '100%', marginRight: '1em'}}/>
                             </Grid>
                             <Grid item md={1}>
@@ -246,7 +246,7 @@ export default () => {
                         </Grid>
                         <Grid item container alignItems='center'>
                             <Grid item md={5}>
-                                <img src={AiruditPicture} alt='Airudit picture'
+                                <img src={AiruditPicture} alt='Airudit'
                                      style={{maxWidth: '100%', marginRight: '1em'}}/>
                             </Grid>
                             <Grid item md={1}>
@@ -306,7 +306,7 @@ export default () => {
                         </Grid>
                         <Grid item container alignItems='center'>
                             <Grid item md={5}>
-                                <img src={SocialFootprintPicture} alt='SocialFootprint picture'
+                                <img src={SocialFootprintPicture} alt='SocialFootprint'
                                      style={{maxWidth: '100%', marginRight: '1em'}}/>
                             </Grid>
                             <Grid item md={1}>
@@ -326,3 +326,5 @@ export default () => {
         </div>
     )
 };
+
+export default Portfolio;

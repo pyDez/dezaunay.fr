@@ -6,7 +6,7 @@ import Monitoring from '../assets/icn-monitoring.svg'
 import Pyd from '../assets/photo-pyd.png'
 import utilities from '../style/utilities.module.css';
 
-export default () => {
+const Bio = () => {
     const iconStyle: React.CSSProperties = {
         color: '#878E93',
         textTransform: 'uppercase'
@@ -61,3 +61,5 @@ export default () => {
         </>
     )
 };
+
+export default Bio;
