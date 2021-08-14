@@ -1,30 +1,35 @@
-import {Accordion, AccordionDetails, AccordionSummary, Grid, makeStyles, Hidden, IconButton} from "@material-ui/core";
+import {Accordion, AccordionDetails, AccordionSummary, Grid, makeStyles, Hidden} from "@material-ui/core";
 import React from "react";
 import Plus from '../assets/ouvrir.svg'
 import Minus from '../assets/fermer.svg'
 import Arrow from '../assets/fleche.svg'
 import Quote from '../assets/apostrophe.svg'
 import Lucine from '../assets/Lucine_logo.png'
+import LucineLight from '../assets/Lucine_logo_light.png'
 import LucinePicture from '../assets/Lucine-Realite-Virtuelle.jpg'
 import Airudit from '../assets/airudit_logo.png'
+import AiruditLight from '../assets/airudit_logo_light.png'
 import AiruditPicture from '../assets/Airudit_Voice.jpg'
 import SocialFootprint from '../assets/logo social footprint.png'
+import SocialFootprintLight from '../assets/logo social footprint_light.png'
 import SocialFootprintPicture from '../assets/Social Footprint.png'
 import styled from "styled-components";
 import utilities from '../style/utilities.module.css';
-import { animated } from "react-spring";
+import {animated} from "react-spring";
 import useBoop from "../hooks/UseBoop";
 
 const Portfolio = () => {
-    const {style, trigger} = useBoop({rotation: 15});
+    const lucineBoop = useBoop({rotation: 15});
+    const airuditBoop = useBoop({rotation: 15});
+    const socialFootprintBoop = useBoop({rotation: 15});
 
     const Icon = styled((props: any) => (
         <div {...props}>
-            <div style={{cursor:'pointer'}} className="expanded">
-                <animated.img style={style} src={Plus} alt='plus'/>
+            <div style={{cursor: 'pointer'}} className="expanded">
+                <animated.img style={props.style} src={Plus} alt='plus'/>
             </div>
-            <div style={{cursor:'pointer'}} className="collapsed">
-                <animated.img style={style} src={Minus} alt='minus'/>
+            <div style={{cursor: 'pointer'}} className="collapsed">
+                <animated.img style={props.style} src={Minus} alt='minus'/>
             </div>
         </div>
     ))`
@@ -104,17 +109,22 @@ const Portfolio = () => {
             <Accordion className={classes.accordion} style={{margin: '3em',}}>
                 <AccordionSummary
                     expandIcon={
-                        <Icon></Icon>
+                        <Icon style={lucineBoop.style}></Icon>
                     }
                     className={classes.accordionHeader}
-                    onMouseEnter={trigger} onTouchStart={trigger}
+                    onMouseEnter={lucineBoop.trigger} onTouchStart={lucineBoop.trigger}
                 >
                     <Grid container justify='space-between' alignItems='baseline'>
                         <Grid item>
                             Lucine
                         </Grid>
                         <Grid item>
-                            <img src={Lucine} alt='Lucine'/>
+                            <Hidden xsDown>
+                                <img src={Lucine} alt='Lucine'/>
+                            </Hidden>
+                            <Hidden smUp>
+                                <img src={LucineLight} alt='Lucine'/>
+                            </Hidden>
                         </Grid>
                     </Grid>
                 </AccordionSummary>
@@ -223,17 +233,22 @@ const Portfolio = () => {
             <Accordion className={classes.accordion} style={{margin: '3em',}}>
                 <AccordionSummary
                     expandIcon={
-                        <Icon></Icon>
+                        <Icon style={airuditBoop.style}></Icon>
                     }
                     className={classes.accordionHeader}
-                    onMouseEnter={trigger} onTouchStart={trigger}
+                    onMouseEnter={airuditBoop.trigger} onTouchStart={airuditBoop.trigger}
                 >
                     <Grid container justify='space-between' alignItems='baseline'>
                         <Grid item>
                             Airudit
                         </Grid>
                         <Grid item>
-                            <img src={Airudit} alt='Airudit'/>
+                            <Hidden xsDown>
+                                <img src={Airudit} alt='Airudit'/>
+                            </Hidden>
+                            <Hidden smUp>
+                                <img src={AiruditLight} alt='Airudit'/>
+                            </Hidden>
                         </Grid>
                     </Grid>
                 </AccordionSummary>
@@ -282,17 +297,22 @@ const Portfolio = () => {
             <Accordion className={classes.accordion} style={{margin: '3em',}}>
                 <AccordionSummary
                     expandIcon={
-                        <Icon></Icon>
+                        <Icon style={socialFootprintBoop.style}></Icon>
                     }
                     className={classes.accordionHeader}
-                    onMouseEnter={trigger} onTouchStart={trigger}
+                    onMouseEnter={socialFootprintBoop.trigger} onTouchStart={socialFootprintBoop.trigger}
                 >
                     <Grid container justify='space-between' alignItems='baseline'>
                         <Grid item>
                             Social Footprint
                         </Grid>
                         <Grid item>
-                            <img src={SocialFootprint} alt='SocialFootprint'/>
+                            <Hidden xsDown>
+                                <img src={SocialFootprint} alt='SocialFootprint'/>
+                            </Hidden>
+                            <Hidden smUp>
+                                <img src={SocialFootprintLight} alt='SocialFootprint'/>
+                            </Hidden>
                         </Grid>
                     </Grid>
                 </AccordionSummary>
