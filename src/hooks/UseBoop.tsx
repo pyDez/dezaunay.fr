@@ -42,6 +42,7 @@ function useBoop({
         if (!isBooped) {
             return;
         }
+
         const timeoutId = window.setTimeout(() => {
             setIsBooped(false);
         }, timing);
@@ -50,7 +51,8 @@ function useBoop({
         };
     }, [isBooped, timing]);
     
-    const trigger = React.useCallback((event: any) => {
+    const trigger = React.useCallback((event: React.SyntheticEvent) => {
+        event.preventDefault();
         setIsBooped(true);
     }, []);
     return {style, trigger};

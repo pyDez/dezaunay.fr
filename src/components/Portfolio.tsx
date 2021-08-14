@@ -20,13 +20,12 @@ const Portfolio = () => {
 
     const Icon = styled((props: any) => (
         <div {...props}>
-            <IconButton className="expanded">
-                    <animated.img style={style} src={Plus} alt='plus'/>
-            </IconButton>
-            <IconButton onMouseEnter={trigger} onTouchStart={trigger} className="collapsed">
+            <div style={{cursor:'pointer'}} className="expanded">
+                <animated.img style={style} src={Plus} alt='plus'/>
+            </div>
+            <div style={{cursor:'pointer'}} className="collapsed">
                 <animated.img style={style} src={Minus} alt='minus'/>
-            </IconButton>
-
+            </div>
         </div>
     ))`
       & > .expanded {

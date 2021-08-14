@@ -5,7 +5,6 @@ import ArrowRight from '../assets/arrow-long-right.svg';
 import styled from 'styled-components';
 import useBoop from '../hooks/UseBoop';
 import {animated} from 'react-spring';
-import IconButton from '@material-ui/core/IconButton';
 
 interface StepperProps {
     changeStep: (activeStep: number) => void
@@ -22,24 +21,20 @@ export default function Stepper(props: StepperProps) {
                 position='static'
                 activeStep={activeStep}
                 nextButton={
-                    <IconButton size='small'
-                                onClick={handleNext} style={activeStep === 1 ? {display: 'none'} : {display: 'block'}}
-                                onMouseEnter={trigger} onTouchStart={trigger}
-                    >
-                        <animated.span style={style}>
+                    <div style={{cursor:'pointer'}}>
+                        <animated.span style={activeStep === 1 ? {display: 'none', ...style} : {display: 'block', ...style}}
+                                      onMouseEnter={trigger} onTouchStart={trigger} onClick={handleNext}>
                             <img src={ArrowRight} alt='Arrow right'/>
                         </animated.span>
-                    </IconButton>
+                    </div>
                 }
                 backButton={
-                    <IconButton size='small'
-                                onMouseEnter={trigger} onTouchStart={trigger}
-                                onClick={handleBack} style={activeStep === 0 ? {display: 'none'} : {display: 'block'}}
-                    >
-                        <animated.span style={style}>
+                    <div style={{cursor:'pointer'}}>
+                        <animated.span style={activeStep === 0 ? {display: 'none', ...style} : {display: 'block', ...style}}
+                                      onMouseEnter={trigger} onTouchStart={trigger} onClick={handleBack}>
                             <img src={ArrowLeft} alt='Arrow left'/>
                         </animated.span>
-                    </IconButton>
+                    </div>
                 }
             />
         </div>
