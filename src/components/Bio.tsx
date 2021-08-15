@@ -1,3 +1,4 @@
+import { useMediaQuery, useTheme } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Conception from '../assets/icn-conception.svg'
 import Development from '../assets/icn-dev.svg'
@@ -16,13 +17,16 @@ const Bio = () => {
         fontSize: '1.3em',
     }
 
+    const theme = useTheme();
+    const isXs = useMediaQuery(theme.breakpoints.down('xs'));
+
     return (
         <>
             <Grid container alignItems='center' justify='center' style={{margin: '2em 0'}}>
                 <Grid item>
                     <img src={Pyd} alt='me'/>
                 </Grid>
-                <Grid item style={{marginLeft: '-1.5em'}}>
+                <Grid item style={{marginLeft: isXs? '0' : '-1.5em'}}>
                     <span style={bioTitleStyle}>Ensemble, mettons la technique<br/>
                         au service d'un {' '}
                         <span style={{borderBottom: '1px solid var(--secondaryColor)', paddingBottom: '0.4em'}}>monde meilleur !</span>

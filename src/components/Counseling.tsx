@@ -46,8 +46,8 @@ const Counselling = () => {
     const Implementation = ({StepNumber}: StepProps) => {
         const styles = useStepStyles(StepNumber);
         return (
-            <Grid item xs={12} md={6} style={{paddingTop: '1.3em', paddingRight: !displayStepper ? '1.2em' : '5em', paddingLeft: '5em'}}>
-                <animated.div style={styles}>
+            <Grid item xs={12} md={6}>
+                <animated.div style={{paddingTop: '1.3em', paddingRight: !displayStepper ? '1.2em' : '5em', paddingLeft: '5em', ...styles}}>
                     <h4 style={taskTitleStyle}>En réalisant vos projets</h4>
                     <p>
                         Application web et mobile visant à acquérir, stocker et traiter des données, « from
@@ -67,8 +67,8 @@ const Counselling = () => {
     const Design = ({StepNumber}: StepProps) => {
         const styles = useStepStyles(StepNumber);
         return (
-            <Grid item xs={12} md={6} style={{paddingTop: '1.3em', paddingLeft: !displayStepper ? '1.2em' : '5em', paddingRight: '5em'}}>
-                <animated.div style={styles}>
+            <Grid item xs={12} md={6}>
+                <animated.div style={{paddingTop: '1.3em', paddingLeft: !displayStepper ? '1.2em' : '5em', paddingRight: '5em', ...styles}}>
                     <Hidden mdUp>
                         <div style={{width: '1.3em'}}></div>
                     </Hidden>
