@@ -162,9 +162,8 @@ const Portfolio = () => {
                             interfaces
                             d’administration, des interfaces à l’usage du patient et des interfaces de récupération de
                             données à destination des chercheurs de l’équipe.<br/>
-                            Cette réussite technique a permis une
-                            <b>levée de fond record</b> pour une entreprise de cette maturité de 5.5 Million
-                            d’euros.<br/>
+                            Cette réussite technique a permis une <b>levée de fond record</b> pour une entreprise
+                            de cette maturité de 5.5 Million d’euros.<br/>
                             La sévérité des contraintes dû au domaine médicale en terme de réglementation, de sécurité
                             des données, d’interopérabilité fut un moteur exaltant pour construire des applicatifs
                             résilient et évolutif.<br/><br/>
