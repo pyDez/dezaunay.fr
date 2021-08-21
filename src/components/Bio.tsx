@@ -34,12 +34,12 @@ const Bio = () => {
                 </Grid>
             </Grid>
             <Grid container>
-                <Grid xs={8} item style={{padding: '3em',}} className={utilities.backgroundPrimaryColor}>
+                <Grid xs={7} sm={8} item style={{padding: isXs? '3em 1.5em' : '3em',}} className={utilities.backgroundPrimaryColor}>
                     Depuis 10 ans, je suis le dernier maillon entre votre idée et vos utilisateurs.<br/><br/>
                     Compétent, passionné, ouvert et empathique.<br/><br/>
                     Créons ensemble des services inédits, innovants et à l’épreuve du temps.
                 </Grid>
-                <Grid xs={4} item container direction="column" justify='center' style={{textAlign: 'center',}}>
+                <Grid xs={5} sm={4} item container direction="column" justify='center' style={{textAlign: 'center',}}>
                     <Grid item style={iconStyle}>
                         <img src={Conception} alt='Conception'/>
                         <br/>
