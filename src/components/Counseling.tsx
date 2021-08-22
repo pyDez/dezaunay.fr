@@ -1,5 +1,5 @@
 import {Grid, Hidden, useMediaQuery, useTheme} from "@material-ui/core";
-import React from "react";
+import React, { TouchEvent } from "react";
 import Lighthouse from '../assets/phare.svg'
 import Lightrays from '../assets/lightrays.svg'
 import utilities from '../style/utilities.module.css';
@@ -39,6 +39,36 @@ const Counselling = () => {
         })
     }
 
+    let swipeStartTime : number|undefined = undefined;
+    let swipeStartCursorPlace : {x: number, y: number}|undefined = undefined;
+
+    const startingSwipe = (event : TouchEvent) => {
+        swipeStartTime = Date.now();
+        swipeStartCursorPlace = {
+            x: event.touches[0].clientX,
+            y: event.touches[0].clientY,
+        }
+    }
+    const stoppingSwipe = (event : TouchEvent) => {
+        if(swipeStartTime && swipeStartCursorPlace)
+        {
+            if(Date.now() - swipeStartTime < 2000 &&  Math.abs(event.changedTouches[0].clientY - swipeStartCursorPlace.y) < 300)
+            {
+                if(activeStep > 0 && event.changedTouches[0].clientX - swipeStartCursorPlace.x > 20)
+                {
+                    setActiveStep(activeStep - 1);
+                }
+                else if( activeStep < 1 && event.changedTouches[0].clientX - swipeStartCursorPlace.x < -20)
+                {
+                    setActiveStep(activeStep + 1);
+                }
+            }
+        }
+
+        swipeStartCursorPlace = undefined;
+        swipeStartTime = undefined;
+    }
+
     interface StepProps {
         StepNumber: number,
     }
@@ -50,14 +80,13 @@ const Counselling = () => {
                 <animated.div style={{paddingTop: '1.3em', paddingRight: !displayStepper ? '1.2em' : '5em', paddingLeft: '5em', ...styles}}>
                     <h4 style={taskTitleStyle}>En réalisant vos projets</h4>
                     <p>
-                        Application web et mobile visant à acquérir, stocker et traiter des données, « from
-                        scratch » ou héritant d’une lourde dette technique, implémentons ensemble la meilleure
+                        Application web et mobile visant à acquérir, stocker et traiter des données, ex nihilo ou héritant d’une dette technique, implémentons ensemble la meilleure
                         solution pour répondre à votre besoin.
                     </p>
                     <p>
                         Vous avez des besoins spécifiques ? Traitement audio ou vidéo, capteurs connectés,
-                        Intelligence Artificielle et deep learning, temps réel et web socket ? Le projet n’en sera que
-                        plus amusant !
+                        Intelligence Artificielle et deep learning, temps réel et web socket ? C'est sujets me passionnent, je saurais concevoir
+                        les solutions techniques adaptées à votre projet.
                     </p>
                 </animated.div>
             </Grid>
@@ -72,7 +101,7 @@ const Counselling = () => {
                     <Hidden mdUp>
                         <div style={{width: '1.3em'}}></div>
                     </Hidden>
-                    <h4 style={taskTitleStyle}>En vous accompagnant dans vos réflexions !</h4>
+                    <h4 style={taskTitleStyle}>En vous accompagnant dans vos réflexions</h4>
                     <p>
                         <b>Vous êtes porteur de projets ou décisionnaire ? Vous cherchez une expertise sur un sujet
                             technique ?</b><br/>
@@ -101,10 +130,10 @@ const Counselling = () => {
                 </Grid>
                 <Hidden mdUp>
                     <Grid item className={utilities.goToFront}>
-                        <Stepper changeStep={(newStep: number) => setActiveStep(newStep)}></Stepper>
+                        <Stepper currentStep={activeStep} changeStep={(newStep: number) => setActiveStep(newStep)}></Stepper>
                     </Grid>
                 </Hidden>
-                <Grid item container className={utilities.goToFront}>
+                <Grid item container className={utilities.goToFront} onTouchStart={startingSwipe} onTouchEnd={stoppingSwipe}>
                     <Implementation StepNumber={0}></Implementation>
                     <Design StepNumber={1}></Design>
                 </Grid>

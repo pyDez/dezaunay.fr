@@ -331,11 +331,10 @@ const Portfolio = () => {
                             </Grid>
                             <Grid item md={6}>
                                 Social Footprint permet d’identifier objectivement les domaines et la puissance de son
-                                impact sur sa communauté. Cette aventure entrepreneuriale fut riche d’un point de vue
-                                business autant que d’un point de vue technique. La perfection de l’outil et mon
-                                incapacité
-                                à le vendre ont prouvé que j’avais une plus grande appétence pour le second que pour le
-                                premier.
+                                impact sur sa communauté. Cette aventure entrepreneuriale fut riche d’un point de vue technique
+                                autant que d’un  point de vue business. La perfection de l’outil et mon incapacité
+                                à le vendre ont prouvé que j’avais une plus grande appétence pour le premier que pour le
+                                second.
                             </Grid>
                         </Grid>
                     </Grid>

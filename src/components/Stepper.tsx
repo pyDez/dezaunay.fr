@@ -8,10 +8,12 @@ import {animated} from 'react-spring';
 
 interface StepperProps {
     changeStep: (activeStep: number) => void
+    currentStep: number
 }
 
 export default function Stepper(props: StepperProps) {
 
+    const activeStep = props.currentStep;
     const {style, trigger} = useBoop({rotation: 15});
     const StyledStepper = styled((props: any) => (
         <div {...props}>
@@ -56,16 +58,13 @@ export default function Stepper(props: StepperProps) {
       }
     `;
 
-    const [activeStep, setActiveStep] = React.useState(0);
 
     const handleNext = () => {
         props.changeStep(activeStep + 1);
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
     };
 
     const handleBack = () => {
         props.changeStep(activeStep - 1);
-        setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
 
     return (

@@ -46,7 +46,7 @@ const Contact = () => {
                         }}></div>
                     </Grid>
                     <Grid item>
-                        <p style={{fontSize: '1.5em',}}>Discutons de vos projets !</p>
+                        <p style={{fontSize: '1.5em',}}>Discutons de vos projets</p>
                         <div style={{marginLeft: '2em'}}>
                             <p>
                                 <a href="mailto: py.dezaunay@gmail.com" onMouseEnter={emailBoop.trigger}

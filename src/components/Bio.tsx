@@ -29,13 +29,13 @@ const Bio = () => {
                 <Grid item style={{marginLeft: isXs? '0' : '-1.5em'}}>
                     <span style={bioTitleStyle}>Ensemble, mettons la technique<br/>
                         au service d'un {' '}
-                        <span style={{borderBottom: '1px solid var(--secondaryColor)', paddingBottom: '0.4em'}}>monde meilleur !</span>
+                        <span style={{borderBottom: '1px solid var(--secondaryColor)', paddingBottom: '0.4em'}}>monde meilleur</span>
                     </span>
                 </Grid>
             </Grid>
             <Grid container>
                 <Grid xs={7} sm={8} item style={{padding: isXs? '3em 1.5em' : '3em',}} className={utilities.backgroundPrimaryColor}>
-                    Depuis 10 ans, je suis le dernier maillon entre votre idée et vos utilisateurs.<br/><br/>
+                    Depuis 10 ans, je concrétise votre idée auprés de vos utilisateurs.<br/><br/>
                     Compétent, passionné, ouvert et empathique.<br/><br/>
                     Créons ensemble des services inédits, innovants et à l’épreuve du temps.
                 </Grid>
