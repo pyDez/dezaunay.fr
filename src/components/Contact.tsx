@@ -36,7 +36,7 @@ const Contact = () => {
                     </Grid>
                 </Grid>
                 <Grid container item md={4} xs={12} style={{position: 'relative', marginBottom: '2em',}}
-                      justify='center'>
+                      justifyContent='center'>
                     <Grid item>
                         <div style={{
                             borderBottom: '1px solid var(--secondaryColor)',
@@ -48,7 +48,7 @@ const Contact = () => {
                     <Grid item>
                         <p style={{fontSize: '1.5em',}}>Discutons de vos projets</p>
                         <div style={{marginLeft: '2em'}}>
-                            <p>
+                            <div style={{margin: '1em 0'}}>
                                 <a href="mailto: py.dezaunay@gmail.com" onMouseEnter={emailBoop.trigger}
                                    onTouchStart={emailBoop.trigger}
                                    style={{color: 'var(--secondaryColor)', textDecoration: 'none'}}>
@@ -61,8 +61,8 @@ const Contact = () => {
                                         </Grid>
                                     </Grid>
                                 </a>
-                            </p>
-                            <p>
+                            </div>
+                            <div style={{margin: '1em 0'}}>
                                 <a href="tel: +33760458673" onMouseEnter={phoneBoop.trigger}
                                    onTouchStart={phoneBoop.trigger}
                                    style={{color: 'var(--bodyColor)', textDecoration: 'none'}}>
@@ -75,8 +75,8 @@ const Contact = () => {
                                         </Grid>
                                     </Grid>
                                 </a>
-                            </p>
-                            <p>
+                            </div>
+                            <div style={{margin: '1em 0'}}>
                                 <a href="https://www.openstreetmap.org/?mlat=44.70077&mlon=-0.24410#map=18/44.70078/-0.24410"
                                    target='_blank' onMouseEnter={pinBoop.trigger} onTouchStart={pinBoop.trigger}
                                    style={{color: 'var(--bodyColor)', textDecoration: 'none'}}
@@ -90,7 +90,7 @@ const Contact = () => {
                                         </Grid>
                                     </Grid>
                                 </a>
-                            </p>
+                            </div>
                         </div>
                     </Grid>
                     <Grid item>

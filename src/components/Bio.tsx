@@ -22,7 +22,7 @@ const Bio = () => {
 
     return (
         <>
-            <Grid container alignItems='center' justify='center' style={{margin: '2em 0'}}>
+            <Grid container alignItems='center' justifyContent='center' style={{margin: '2em 0'}}>
                 <Grid item>
                     <img src={Pyd} alt='me'/>
                 </Grid>
@@ -39,7 +39,7 @@ const Bio = () => {
                     Compétent, passionné, ouvert et empathique.<br/><br/>
                     Créons ensemble des services inédits, innovants et à l’épreuve du temps.
                 </Grid>
-                <Grid xs={5} sm={4} item container direction="column" justify='center' style={{textAlign: 'center',}}>
+                <Grid xs={5} sm={4} item container direction="column" justifyContent='center' style={{textAlign: 'center',}}>
                     <Grid item style={iconStyle}>
                         <img src={Conception} alt='Conception'/>
                         <br/>

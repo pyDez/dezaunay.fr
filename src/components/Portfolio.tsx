@@ -144,7 +144,7 @@ const Portfolio = () => {
                     }}>Portfolio</h2>
                 </span>
             </Hidden>
-            {Experiences.map((experience) =>
+            {Experiences.map((experience, index) =>
                 <Experience Name={experience.Name}
                             Logo={experience.Logo}
                             LogoLight={experience.LogoLight}
@@ -153,7 +153,8 @@ const Portfolio = () => {
                             Introduction={experience.Introduction}
                             Body={experience.Body}
                             Testimony={experience.Testimony}
-                            Results={experience.Results}></Experience>
+                            Results={experience.Results}
+                            key={index}></Experience>
             )}
 
         </div>

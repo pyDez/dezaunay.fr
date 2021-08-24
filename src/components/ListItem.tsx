@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import Arrow from '../assets/fleche.svg'
 
+export interface ListItemProps{
+    key: string|number,
+    children: string,
+}
 
-const ListItem = styled((props: any) => (
-    <li {...props}>
-    </li>
-))`
+const ListItem = styled.li`
       & {
         paddingLeft: 1.3em;
         margin: 2em 2em 2em 0;

@@ -29,10 +29,10 @@ const MainLayout = () => {
 
     return (
         <Grid container className={utilities.goToBack} alignItems='stretch'>
-            <Grid item sm={12} md={5} container style={{marginTop: '2em'}} justify='space-between'
+            <Grid item sm={12} md={5} container style={{marginTop: '2em'}} justifyContent='space-between'
                   alignItems='flex-start' alignContent='flex-start'>
                 <Hidden mdUp>
-                    <Grid item xs={3} container justify='center' alignItems='center'>
+                    <Grid item xs={3} container justifyContent='center' alignItems='center'>
                         <Link to='/menu'>
                             <IconButton onMouseEnter={trigger} onTouchStart={trigger}>
                                 <animated.span style={style}>
@@ -42,7 +42,7 @@ const MainLayout = () => {
                         </Link>
                     </Grid>
                 </Hidden>
-                <Grid item xs={9} sm={6} md={8} container alignItems='center' justify='center'>
+                <Grid item xs={9} sm={6} md={8} container alignItems='center' justifyContent='center'>
                     <Grid item style={{display: 'flex'}}>
                         <Link to=''>
                             <IconButton>
@@ -74,7 +74,7 @@ const MainLayout = () => {
                     </Grid>
                 </Hidden>
                 <Hidden mdUp>
-                    <Grid item xs={12} container justify='center'>
+                    <Grid item xs={12} container justifyContent='center'>
                         <div
                             className={`${utilities.noMargin} ${utilities.primaryColor} ${utilities.secondaryFont}`}>Architecte
                             & développeur indépendant

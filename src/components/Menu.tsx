@@ -17,9 +17,9 @@ const Menu = () => {
 
     return (
         <>
-            <Grid container style={{marginTop: '2em', marginBottom: '2em'}} justify='space-between'
+            <Grid container style={{marginTop: '2em', marginBottom: '2em'}} justifyContent='space-between'
                   alignItems="center">
-                <Grid item xs={3} container justify='center' alignItems='center'>
+                <Grid item xs={3} container justifyContent='center' alignItems='center'>
                     <Link to=''>
                         <IconButton onMouseEnter={trigger} onTouchStart={trigger}>
                             <animated.span style={style}>
@@ -29,7 +29,7 @@ const Menu = () => {
                     </Link>
                 </Grid>
                 <Grid item xs={5}></Grid>
-                <Grid item xs={4} container alignItems='center' justify='center'>
+                <Grid item xs={4} container alignItems='center' justifyContent='center'>
                     <Grid item style={{display: 'flex'}}>
                         <Link to=''>
                             <IconButton>

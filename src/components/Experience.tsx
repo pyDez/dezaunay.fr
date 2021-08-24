@@ -59,7 +59,7 @@ const Experience = (props: ExperienceProps) => {
                 className={classes.accordionHeader}
                 onMouseEnter={boop.trigger} onTouchStart={boop.trigger}
             >
-                <Grid container justify='space-between' alignItems='baseline'>
+                <Grid container justifyContent='space-between' alignItems='baseline'>
                     <Grid item>
                         {props.Name}
                     </Grid>
@@ -122,7 +122,7 @@ const Experience = (props: ExperienceProps) => {
                                     fontWeight: 'normal',
                                 }}>Résultats obtenus :</h5>
                                 <ul className={classes.resultsList}>
-                                    {props.Results.map((result, index) => <ListItem key={index}>{result}</ListItem>)}
+                                    {props.Results.map((result, index) => <ListItem key={index.toString()}>{result}</ListItem>)}
                                 </ul>
                             </Grid>
                             }

@@ -21,7 +21,7 @@ const MenuLayout = () => {
 
     return (
         <>
-            <Grid container justify='space-evenly'
+            <Grid container justifyContent='space-evenly'
                   style={{marginTop: '2em', height:'4.5em', borderBottom: '1px solid var(--secondaryColor)'}}>
                 <Link to={'Accompagnement'} style={{textDecoration: 'none', color: 'inherit'}}>
                     <Grid item className={activeTab === 0 ? menuStyle.activeTab : undefined}>
