@@ -11,7 +11,8 @@ const Counselling = () => {
         fontFamily: 'var(--secondaryFont)',
         fontSize: '1.3em',
         borderBottom: '1px solid var(--secondaryColor)',
-        paddingBottom: '0.4em',
+        padding: '0em 1.2em 0.4em',
+        textTransform: 'uppercase'
     }
 
     const taskTitleStyle: React.CSSProperties = {
@@ -77,7 +78,7 @@ const Counselling = () => {
         const styles = useStepStyles(StepNumber);
         return (
             <Grid item xs={12} md={6}>
-                <animated.div style={{paddingTop: '1.3em', paddingRight: !displayStepper ? '1.2em' : '5em', paddingLeft: '5em', ...styles}}>
+                <animated.div style={{paddingTop: '1.3em', paddingRight: !displayStepper ? '1.2em' : '0', ...styles}}>
                     <h4 style={taskTitleStyle}>En réalisant vos projets</h4>
                     <p>
                         Application web et mobile visant à acquérir, stocker et traiter des données, ex nihilo ou héritant d’une dette technique, implémentons ensemble la meilleure
@@ -85,7 +86,7 @@ const Counselling = () => {
                     </p>
                     <p>
                         Vous avez des besoins spécifiques ? Traitement audio ou vidéo, capteurs connectés,
-                        Intelligence Artificielle et deep learning, temps réel et web socket ? C'est sujets me passionnent, je saurais concevoir
+                        Intelligence Artificielle et deep learning, temps réel et web socket ? Ces sujets me passionnent, je saurai concevoir
                         les solutions techniques adaptées à votre projet.
                     </p>
                 </animated.div>
@@ -97,7 +98,7 @@ const Counselling = () => {
         const styles = useStepStyles(StepNumber);
         return (
             <Grid item xs={12} md={6}>
-                <animated.div style={{paddingTop: '1.3em', paddingLeft: !displayStepper ? '1.2em' : '5em', paddingRight: '5em', ...styles}}>
+                <animated.div style={{paddingTop: '1.3em', paddingLeft: !displayStepper ? '1.2em' : '0', ...styles}}>
                     <Hidden mdUp>
                         <div style={{width: '1.3em'}}></div>
                     </Hidden>
@@ -117,11 +118,29 @@ const Counselling = () => {
         )
     }
 
+    const devKnowledges: string[] =
+        [
+            'C#','.Net', '.Net core', 'NoSQL', 'MongoDB', 'Vue.js', 'React', 'TypeScript'
+        ];
+
+    const craftmanshipKnowledges: string[] =
+        [
+            'DevOps', 'CI/CD', 'Clean Architecture', 'DDD', 'TDD', 'API REST', 'Méthodes Agiles'
+        ];
+
+    const tagStyle: React.CSSProperties={
+        background:'var(--primaryColor)',
+        borderRadius:'1em',
+        padding: '0 1em',
+        color:'#FFF',
+        margin:'1em 1em 0 0',
+        display:'inline-block'};
+
     return (
         <div style={{position: 'relative', marginTop: '3em'}} id='Accompagnement'>
             <img style={{position: 'absolute', width: '100%', marginTop: '1em'}}
                  src={Lightrays} alt='Lightrays'/>
-            <Grid container direction='column' alignItems='center'>
+            <Grid container direction='column' alignItems='center' style={{padding:'0 5em',}}>
                 <Grid item className={utilities.goToFront}>
                     <img src={Lighthouse} alt='Lighthouse'/>
                 </Grid>
@@ -136,6 +155,17 @@ const Counselling = () => {
                 <Grid item container className={utilities.goToFront} onTouchStart={startingSwipe} onTouchEnd={stoppingSwipe}>
                     <Implementation StepNumber={0}></Implementation>
                     <Design StepNumber={1}></Design>
+                </Grid>
+                <Grid item container className={utilities.goToFront} style={{borderTop:'1px solid var(--secondaryColor)', marginBottom:'2em'}}>
+                    <Grid item xs={12} md={6}>
+                        <h3 style={{fontFamily: 'var(--secondaryFont)', textTransform: 'uppercase', fontWeight:'normal'}}>Développement</h3>
+                        {devKnowledges.map((knowledge) => <span style={tagStyle}>{knowledge}</span>)}
+                    </Grid>
+                    <Grid item xs={12} md={6} style={{paddingLeft: !displayStepper ? '1.2em' : '0', marginTop: !displayStepper ? '0' : '2em'}}>
+                        <h3 style={{fontFamily: 'var(--secondaryFont)', textTransform: 'uppercase', fontWeight:'normal'}}>Craftmanship</h3>
+                        {craftmanshipKnowledges
+.map((knowledge) => <span style={tagStyle}>{knowledge}</span>)}
+                    </Grid>
                 </Grid>
 
             </Grid>

@@ -36,7 +36,7 @@ const Contact = () => {
                     </Grid>
                 </Grid>
                 <Grid container item md={4} xs={12} style={{position: 'relative', marginBottom: '2em',}}
-                      justifyContent='center'>
+                      justify='center'>
                     <Grid item>
                         <div style={{
                             borderBottom: '1px solid var(--secondaryColor)',

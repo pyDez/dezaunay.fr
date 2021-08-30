@@ -59,7 +59,7 @@ const Experience = (props: ExperienceProps) => {
                 className={classes.accordionHeader}
                 onMouseEnter={boop.trigger} onTouchStart={boop.trigger}
             >
-                <Grid container justifyContent='space-between' alignItems='baseline'>
+                <Grid container justify='space-between' alignItems='baseline'>
                     <Grid item>
                         {props.Name}
                     </Grid>

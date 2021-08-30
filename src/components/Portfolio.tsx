@@ -1,5 +1,6 @@
-import {Hidden} from "@material-ui/core";
+import {Grid, Hidden} from "@material-ui/core";
 import React from "react";
+import Github from '../assets/github.svg'
 import Lucine from '../assets/Lucine_logo.png'
 import LucineLight from '../assets/Lucine_logo_light.png'
 import LucinePicture from '../assets/Lucine-Realite-Virtuelle.jpg'
@@ -27,10 +28,10 @@ const Portfolio = () => {
                 Logo: Lucine,
                 LogoLight: LucineLight,
                 Picture: LucinePicture,
-                Description: 'Lucine propose des thérapies numériques pour soulager les douleurs chronique.',
-                Introduction: 'Dopée par des algorithmes d’Intelligence Artificielle leur permettant de s’adapter aux spécificités ' +
+                Description: 'Lucine propose des thérapies numériques pour soulager les douleurs chroniques.',
+                Introduction: 'Dopés par des algorithmes d’Intelligence Artificielle leurs permettant de s’adapter aux spécificités ' +
                     'des patients, les produits Lucine nécessitent l’agrégation de sources de données diverses, ' +
-                    'des analyses de pointes avant de diffuser les stimulations thérapeutique visuelles et ' +
+                    'des analyses de pointes avant de diffuser les stimulations thérapeutiques visuelles et ' +
                     'auditives adéquates.',
                 Body:
                     'En tant que CTO, j’étais en charge de concevoir et d’implémenter, avec une équipe de 10 ' +
@@ -40,9 +41,9 @@ const Portfolio = () => {
                     'données à destination des chercheurs de l’équipe.<br/> ' +
                     'Cette réussite technique a permis une <b>levée de fond record</b> pour une entreprise ' +
                     'de cette maturité de 5.5 Million d’euros.<br/> ' +
-                    'La sévérité des contraintes dû au domaine médicale en terme de réglementation, de sécurité ' +
+                    'La sévérité des contraintes dûe au domaine médicale en terme de réglementation, de sécurité ' +
                     'des données, d’interopérabilité fut un moteur exaltant pour construire des applicatifs ' +
-                    'résilient et évolutif.<br/><br/> ' +
+                    'résilients et évolutifs.<br/><br/> ' +
                     '<b>Sous ma direction technique, Lucine s’est structuré comme un véritable éditeur de logiciel ' +
                     'optimisant l’ensemble des processus de conception, de création, de déploiement et de ' +
                     'monitoring des applicatifs.</b>',
@@ -72,16 +73,16 @@ const Portfolio = () => {
                 LogoLight: AiruditLight,
                 Picture: AiruditPicture,
                 Description: 'Airudit développe des agents conversationnels.',
-                Introduction: 'Les agents conversationnels permettant d’interagir avec un matériel ' +
-                    'informatique en utilisant <b>le langage naturel</b>. Au cœur de ces agents, afin de leur permettre ' +
-                    'de comprendre le langage humain, un moteur sémantique décompose, trie, pèse et ' +
-                    'sélectionne ce qui lui semble faire le plus de sens. En constante évolution se moteur ' +
+                Introduction: 'Les agents conversationnels permettent d’interagir avec un matériel ' +
+                    'informatique en utilisant <b>le langage naturel</b>. Afin de leur permettre ' +
+                    'de comprendre le langage humain, on trouve, au cœur de ces agents, un moteur sémantique qui décompose, trie, pèse et ' +
+                    'sélectionne ce qui lui semble faire le plus de sens. En constante évolution ce moteur ' +
                     'agrège un ensemble de briques technologiques lui permettant d’affiner toujours plus sa compréhension.',
                 Body:
-                    'En tant que Leader technique de cette petite équipe de développeur, j’ai ' +
+                    'En tant que Leader technique de cette petite équipe de développeurs, j’ai ' +
                     'été au centre du changement d’échelle de ce moteur sémantique.<br/> ' +
-                    'Un simple apprentissage d’un nouveau domaine grâce à une cartographie correctement formaté, une ontologie, ' +
-                    'ouvrait un nouveau champ de discussion possible avec la machine. <br/> ' +
+                    'L\'ouverture d\'un nouveau champ de discussion possible avec la machin peut désormais se faire ' +
+                    'grâce à un simple apprentissage d’un nouveau domaine basé sur une cartographie correctement formatée : une ontologie. ' +
                     'Mon travail à également rendu possible l’accès à l’agent conversationnel sur de nouveaux supports : web, ' +
                     'serveur vocale, internet des objets.',
                 Results: null,
@@ -119,9 +120,9 @@ const Portfolio = () => {
                 Logo: Natixis,
                 LogoLight: NatixisLight,
                 Picture: NatixisPicture,
-                Description: 'Natixis est une banque internationale spécialisée dans la gestion d’actifs et de fortune, la banque de financement et d’investissement',
+                Description: 'Natixis est une banque internationale spécialisée dans la gestion d’actifs et de fortunes, la banque de financement et d’investissement',
                 Introduction: 'Développeur au sein de l\'équipe d\'analyse quantitative, j\'étais en charge de la création d\'outils d\'aide à la décision en matière d\'investissements financiers.\n' +
-                    'Basé sur de puissants algorithme statistiques, ces applications permettaient de mettre le savoir-faire de Natixis entre toutes les mains.',
+                    'Basé sur de puissants algorithmes statistiques, ces applications permettaient de mettre le savoir-faire de Natixis entre toutes les mains.',
                 Body: null,
                 Results: null,
                 Testimony: null,
@@ -157,6 +158,14 @@ const Portfolio = () => {
                             key={index}></Experience>
             )}
 
+            <Grid xs={12} container alignItems='center' style={{margin: '3em',}}>
+                <Grid item>
+                    Retrouvez mes autres projets sur mon compte <a href='https://github.com/pyDez' style={{color: 'var(--secondaryColor)', textDecoration: 'none', paddingRight:'1em'}}>Github</a>
+                </Grid>
+                <Grid item>
+                    <a href='https://github.com/pyDez' style={{textDecoration: 'none'}}><img src={Github} alt='Github logo'/></a>
+                </Grid>
+            </Grid>
         </div>
     )
 };

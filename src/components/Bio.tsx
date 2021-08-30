@@ -10,7 +10,8 @@ import utilities from '../style/utilities.module.css';
 const Bio = () => {
     const iconStyle: React.CSSProperties = {
         color: '#878E93',
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        margin:'1.2em 0'
     }
     const bioTitleStyle : React.CSSProperties = {
         fontFamily: 'var(--secondaryFont)',
@@ -22,7 +23,7 @@ const Bio = () => {
 
     return (
         <>
-            <Grid container alignItems='center' justifyContent='center' style={{margin: '2em 0'}}>
+            <Grid container alignItems='center' justify='center' style={{margin: '2em 0'}}>
                 <Grid item>
                     <img src={Pyd} alt='me'/>
                 </Grid>
@@ -37,9 +38,11 @@ const Bio = () => {
                 <Grid xs={7} sm={8} item style={{padding: isXs? '3em 1.5em' : '3em',}} className={utilities.backgroundPrimaryColor}>
                     Depuis 10 ans, je concrétise votre idée auprés de vos utilisateurs.<br/><br/>
                     Compétent, passionné, ouvert et empathique.<br/><br/>
-                    Créons ensemble des services inédits, innovants et à l’épreuve du temps.
+                    Créons ensemble des services inédits, innovants et à l’épreuve du temps.<br/><br/>
+                    Egalement maraîcher agroécologique en permaculture, je suis disponible aux 3/5.<br/><br/>
+                    Retrouvez mon profil sur <a href='https://www.linkedin.com/in/pydezaunay/' style={{color: 'var(--secondaryColor)', textDecoration: 'none'}}>LinkedIn</a>.
                 </Grid>
-                <Grid xs={5} sm={4} item container direction="column" justifyContent='center' style={{textAlign: 'center',}}>
+                <Grid xs={5} sm={4} item container direction="column" justify='center' style={{textAlign: 'center',}}>
                     <Grid item style={iconStyle}>
                         <img src={Conception} alt='Conception'/>
                         <br/>
