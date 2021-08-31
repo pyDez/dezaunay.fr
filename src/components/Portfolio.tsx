@@ -158,14 +158,13 @@ const Portfolio = () => {
                             key={index}></Experience>
             )}
 
-            <Grid xs={12} container alignItems='center' style={{margin: '3em',}}>
-                <Grid item>
-                    Retrouvez mes autres projets sur mon compte <a href='https://github.com/pyDez' style={{color: 'var(--secondaryColor)', textDecoration: 'none', paddingRight:'1em'}}>Github</a>
-                </Grid>
-                <Grid item>
-                    <a href='https://github.com/pyDez' style={{textDecoration: 'none'}}><img src={Github} alt='Github logo'/></a>
-                </Grid>
-            </Grid>
+            <div style={{margin: '3em',}}>
+                    Retrouvez mes autres projets sur {' '}
+                <a href='https://github.com/pyDez' style={{color: 'var(--secondaryColor)', textDecoration: 'none', paddingRight:'1em'}}>
+                    Github
+                    <img src={Github} alt='Github logo' style={{paddingLeft:'0.5em', verticalAlign:'middle'}}/>
+                </a>
+            </div>
         </div>
     )
 };
