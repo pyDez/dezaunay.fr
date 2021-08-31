@@ -1,4 +1,4 @@
-import {Grid, Hidden} from "@material-ui/core";
+import { Hidden} from "@material-ui/core";
 import React from "react";
 import Github from '../assets/github.svg'
 import Lucine from '../assets/Lucine_logo.png'
