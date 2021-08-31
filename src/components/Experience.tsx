@@ -5,7 +5,7 @@ import useBoop from "../hooks/UseBoop";
 import CollapseIcon from './CollapseIcon'
 import ListItem from './ListItem'
 
-export interface ExperienceProps {
+export interface ExperienceData {
     Name: string,
     Logo: string,
     LogoLight: string,
@@ -18,8 +18,13 @@ export interface ExperienceProps {
         Name: string,
         Job: string,
         Body: string,
-    } | null
+    } | null,
+}
 
+interface ExperienceProps extends ExperienceData {
+    activeStep: number | null,
+    onChangeStep: (newStep: number|null) => void
+    index: number,
 }
 
 const Experience = (props: ExperienceProps) => {
@@ -50,8 +55,18 @@ const Experience = (props: ExperienceProps) => {
     });
 
     const classes = useStyles();
+
+    const handleChange = (index: number) => (event: object, isExpanded: boolean) => {
+        if (isExpanded === true) {
+            props.onChangeStep(index);
+        }
+
+        if (isExpanded === false) {
+            props.onChangeStep(null);
+        }
+    };
     return (
-        <Accordion className={classes.accordion} style={{margin: '3em',}}>
+        <Accordion expanded={props.activeStep === props.index} className={classes.accordion} style={{margin: '3em',}} onChange={handleChange(props.index)}>
             <AccordionSummary
                 expandIcon={
                     <CollapseIcon style={boop.style}></CollapseIcon>
@@ -122,7 +137,8 @@ const Experience = (props: ExperienceProps) => {
                                     fontWeight: 'normal',
                                 }}>Résultats obtenus :</h5>
                                 <ul className={classes.resultsList}>
-                                    {props.Results.map((result, index) => <ListItem key={index.toString()}>{result}</ListItem>)}
+                                    {props.Results.map((result, index) => <ListItem
+                                        key={index.toString()}>{result}</ListItem>)}
                                 </ul>
                             </Grid>
                             }

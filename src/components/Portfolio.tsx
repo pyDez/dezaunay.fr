@@ -17,11 +17,11 @@ import SocialFootprint from '../assets/logo social footprint.png'
 import SocialFootprintLight from '../assets/logo social footprint_light.png'
 import SocialFootprintPicture from '../assets/Social Footprint.png'
 import utilities from '../style/utilities.module.css';
-import Experience, { ExperienceProps } from "./Experience";
+import Experience, { ExperienceData } from "./Experience";
 
 const Portfolio = () => {
 
-    const Experiences: ExperienceProps[] =
+    const Experiences: ExperienceData[] =
         [
             {
                 Name: 'Lucine',
@@ -128,8 +128,12 @@ const Portfolio = () => {
                 Testimony: null,
             }
         ]
-            
-        
+
+    const [activeStep, setActiveStep] = React.useState<number|null>(null);
+    const onChangeStep = (newStep:number|null)=>{
+        setActiveStep(newStep);
+        console.log(newStep);
+    }
     return (
         <div id='Portfolio'>
             <Hidden mdUp>
@@ -155,7 +159,10 @@ const Portfolio = () => {
                             Body={experience.Body}
                             Testimony={experience.Testimony}
                             Results={experience.Results}
-                            key={index}></Experience>
+                            key={index}
+                            activeStep={activeStep}
+                            onChangeStep={onChangeStep}
+                            index={index}></Experience>
             )}
 
             <div style={{margin: '3em',}}>
