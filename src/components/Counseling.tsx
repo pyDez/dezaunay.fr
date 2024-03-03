@@ -1,4 +1,4 @@
-import {Grid, Hidden, useMediaQuery, useTheme} from "@material-ui/core";
+import {Grid, useMediaQuery, useTheme} from "@material-ui/core";
 import React, {TouchEvent} from "react";
 import Lighthouse from '../assets/phare.svg'
 import Lightrays from '../assets/lightrays.svg'
@@ -25,7 +25,7 @@ const Counselling = () => {
     const [activeStep, setActiveStep] = React.useState(0);
     const theme = useTheme();
     const displayStepper = useMediaQuery(theme.breakpoints.down('sm'));
-
+    const desktopDisplay = useMediaQuery(theme.breakpoints.up('md'));
     const useStepStyles = (stepNumber: number) => {
         return useSpring({
             from: {
@@ -107,9 +107,9 @@ const Counselling = () => {
         return (
             <Grid item xs={12} md={6}>
                 <animated.div style={{paddingTop: '1.3em', paddingLeft: !displayStepper ? '1.2em' : '0', ...styles}}>
-                    <Hidden mdUp>
+                    {!desktopDisplay &&
                         <div style={{width: '1.3em'}}></div>
-                    </Hidden>
+                    }
                     <h4 style={taskTitleStyle}>En vous accompagnant dans vos réflexions</h4>
                     <p>
                         <b>Vous êtes porteur de projets ou décisionnaire ? Vous cherchez une expertise sur un sujet
@@ -128,12 +128,12 @@ const Counselling = () => {
 
     const devKnowledges: string[] =
         [
-            'C#', '.Net', '.Net core', 'NoSQL', 'MongoDB', 'Vue.js', 'React', 'TypeScript'
+            'React', 'TypeScript', 'C#', '.Net', '.Net core', "Python", "Django", "DRF", 'NoSQL', 'MongoDB', "PostgreSQL", 'Vue.js',
         ];
 
     const craftmanshipKnowledges: string[] =
         [
-            'DevOps', 'CI/CD', 'Clean Architecture', 'DDD', 'TDD', 'API REST', 'Méthodes Agiles'
+            'DevOps', 'CI/CD', 'Clean Architecture', 'DDD', 'TDD', 'API REST', 'Méthodes Agiles', "Shape Up"
         ];
 
     const tagStyle: React.CSSProperties = {
@@ -144,7 +144,6 @@ const Counselling = () => {
         margin: '1em 1em 0 0',
         display: 'inline-block'
     };
-
     return (
         <div style={{position: 'relative', marginTop: '3em'}} id='Accompagnement'>
             <animated.img style={{position: 'absolute', width: '100%', marginTop: '1em', ...flashingStyle}}
@@ -156,12 +155,12 @@ const Counselling = () => {
                 <Grid item style={titleStyle} className={utilities.goToFront}>
                     Comment puis-je vous aider ?
                 </Grid>
-                <Hidden mdUp>
+                {!desktopDisplay &&
                     <Grid item className={utilities.goToFront}>
                         <Stepper currentStep={activeStep}
                                  changeStep={(newStep: number) => setActiveStep(newStep)}></Stepper>
                     </Grid>
-                </Hidden>
+                }
                 <Grid item container className={utilities.goToFront} onTouchStart={startingSwipe}
                       onTouchEnd={stoppingSwipe}>
                     <Implementation StepNumber={0}></Implementation>

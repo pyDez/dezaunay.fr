@@ -1,4 +1,4 @@
-import { Hidden} from "@material-ui/core";
+import {useMediaQuery, useTheme} from "@material-ui/core";
 import React from "react";
 import Github from '../assets/github.svg'
 import Lucine from '../assets/Lucine_logo.png'
@@ -16,6 +16,9 @@ import NatixisPicture from '../assets/Natixis.jpg'
 import SocialFootprint from '../assets/logo social footprint.png'
 import SocialFootprintLight from '../assets/logo social footprint_light.png'
 import SocialFootprintPicture from '../assets/Social Footprint.png'
+import Dashdoc from '../assets/logo-dashdoc.png'
+import DashdocLight from '../assets/logo-dashdoc-light.png'
+import DashdocPicture from '../assets/dashdoc_splash.png'
 import utilities from '../style/utilities.module.css';
 import Experience, { ExperienceData } from "./Experience";
 
@@ -23,6 +26,29 @@ const Portfolio = () => {
 
     const Experiences: ExperienceData[] =
         [
+            {
+                Name: 'Dashdoc',
+                Logo: Dashdoc,
+                LogoLight: DashdocLight,
+                Picture: DashdocPicture,
+                Description: 'Le système de gestion des transports (TMS) intuitif, connecté et collaboratif.',
+                Introduction: 'Pensé pour et avec les acteurs du monde du transport routier, Dashdoc a su drastiquement moderniser ce secteur d’activité peu visible mais pourtant omniprésent au cœur de nos sociétés. En débutant sur le créneau des lettres de voitures dématérialisées, Dashdoc a su s’étendre petit à petit pour couvrir l’ensemble du périmètre du fret routier en venant concurrencer les acteurs historiques grâce à une approche ambitieuse, passionnée, un rythme de développement extrêmement rapide et une prise en compte permanente des utilisateurs finaux.',
+                Body:
+                    'En charge du <b>pilotage technique d’une équipe</b> de quatre développeurs, '+
+                    'j’ai contribué à la connexion de Dashdoc avec de nombreux outils tiers :'+
+                    'facturation, télématiques (informatique embarquée dans les camions), ERP, autres TMS... '+
+                    'En fluidifiant les communications entre les logiciels, ces synergies ajoutent une valeur significative'+
+                    'pour les utilisateurs, leur permettant de gagner du temps tout en minimisant les risques d\'erreurs. '+
+                    'Chaque connexion représente également un <b>défi technique exaltant</b> : '+
+                    'découverte d’interfaces et de protocoles plus ou moins modernes, '+
+                    'importance d’assurer la stabilité, et la testabilité de briques logicielles dépendantes d’autres acteurs...',
+                Results: [
+                    'Ajout d\'une vingtaine de laisons entre Dashdoc et d\'autres logiciels',
+                    'Montée en compétences de l\'équipe via un suivi rigoureux (code review, pair programming, ...) et empathique (disponibilité, écoute, pédagogie...)',
+                    'Travail asynchrone (remote, 3/5, horaires décalés) efficace et pragmatique',
+                ],
+                Testimony: null,
+            },
             {
                 Name: 'Lucine',
                 Logo: Lucine,
@@ -134,9 +160,11 @@ const Portfolio = () => {
         setActiveStep(newStep);
         console.log(newStep);
     }
+    const theme = useTheme();
+    const desktopDisplay = useMediaQuery(theme.breakpoints.up('md'));
     return (
         <div id='Portfolio'>
-            <Hidden mdUp>
+            {!desktopDisplay &&
                 <span style={{
                     display: 'flex',
                     justifyContent: 'center',
@@ -148,7 +176,7 @@ const Portfolio = () => {
                         zIndex: 2,
                     }}>Portfolio</h2>
                 </span>
-            </Hidden>
+            }
             {Experiences.map((experience, index) =>
                 <Experience Name={experience.Name}
                             Logo={experience.Logo}

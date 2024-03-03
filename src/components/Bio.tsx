@@ -36,10 +36,10 @@ const Bio = () => {
             </Grid>
             <Grid container>
                 <Grid xs={7} sm={8} item style={{padding: isXs? '3em 1.5em' : '3em',}} className={utilities.backgroundPrimaryColor}>
-                    Depuis 10 ans, je concrétise votre idée auprés de vos utilisateurs.<br/><br/>
+                    Depuis plus de 12 ans, je concrétise votre idée auprés de vos utilisateurs.<br/><br/>
                     Compétent, passionné, ouvert et empathique.<br/><br/>
                     Créons ensemble des services inédits, innovants et à l’épreuve du temps.<br/><br/>
-                    Egalement maraîcher agroécologique en permaculture, je suis disponible aux 3/5.<br/><br/>
+                    Egalement en charge d'un jardin agroécologique, je suis disponible aux 3/5.<br/><br/>
                     Retrouvez mon profil sur <a href='https://www.linkedin.com/in/pydezaunay/' style={{color: 'var(--secondaryColor)', textDecoration: 'none'}}>LinkedIn</a>.
                 </Grid>
                 <Grid xs={5} sm={4} item container direction="column" justify='center' style={{textAlign: 'center',}}>

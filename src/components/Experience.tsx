@@ -1,4 +1,12 @@
-import {Accordion, AccordionDetails, AccordionSummary, Grid, makeStyles, Hidden} from "@material-ui/core";
+import {
+    Accordion,
+    AccordionDetails,
+    AccordionSummary,
+    Grid,
+    makeStyles,
+    useMediaQuery,
+    useTheme
+} from "@material-ui/core";
 import React from "react";
 import Quote from '../assets/apostrophe.svg'
 import useBoop from "../hooks/UseBoop";
@@ -65,6 +73,9 @@ const Experience = (props: ExperienceProps) => {
             props.onChangeStep(null);
         }
     };
+
+    const theme = useTheme();
+    const desktopDisplay = useMediaQuery(theme.breakpoints.up('md'));
     return (
         <Accordion expanded={props.activeStep === props.index} className={classes.accordion} style={{margin: '3em',}} onChange={handleChange(props.index)}>
             <AccordionSummary
@@ -79,12 +90,12 @@ const Experience = (props: ExperienceProps) => {
                         {props.Name}
                     </Grid>
                     <Grid item>
-                        <Hidden xsDown>
+                        {desktopDisplay &&
                             <img src={props.Logo} alt='Lucine'/>
-                        </Hidden>
-                        <Hidden smUp>
+                        }
+                        {!desktopDisplay &&
                             <img src={props.LogoLight} alt='Lucine'/>
-                        </Hidden>
+                        }
                     </Grid>
                 </Grid>
             </AccordionSummary>

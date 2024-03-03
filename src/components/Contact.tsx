@@ -1,4 +1,4 @@
-import {Grid, Hidden} from "@material-ui/core";
+import {Grid, useMediaQuery, useTheme} from "@material-ui/core";
 import React from "react";
 import Ladaux from '../assets/photo-contact.png'
 import Email from '../assets/mail.svg'
@@ -12,9 +12,11 @@ const Contact = () => {
     const phoneBoop = useBoop({rotation: 15});
     const emailBoop = useBoop({rotation: 15});
     const pinBoop = useBoop({rotation: 15});
+    const theme = useTheme();
+    const desktopDisplay = useMediaQuery(theme.breakpoints.up('md'));
     return (
         <>
-            <Hidden mdUp>
+            {!desktopDisplay &&
                 <span style={{
                     display: 'flex',
                     justifyContent: 'center',
@@ -25,7 +27,7 @@ const Contact = () => {
                         padding: '0.5em 1em'
                     }}>Contact</h2>
                 </span>
-            </Hidden>
+            }
             <Grid container alignItems='center' style={{marginTop: '5em', paddingRight: '2em'}} id='Contact'>
 
                 <Grid container item md={8} style={{padding: '0 3em', flexWrap: 'nowrap',}}

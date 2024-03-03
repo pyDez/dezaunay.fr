@@ -2,7 +2,6 @@ import Logo from '../../assets/logo-picto.svg'
 import Menu from '../../assets/menu.svg'
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
-import Hidden from '@material-ui/core/Hidden';
 import utilities from '../../style/utilities.module.css';
 import useBoop from '../../hooks/UseBoop'
 import {animated} from 'react-spring';
@@ -13,6 +12,7 @@ import React, { useEffect } from 'react';
 import Counseling from '../Counseling';
 import Portfolio from '../Portfolio';
 import Contact from '../Contact';
+import {useMediaQuery, useTheme} from "@material-ui/core";
 
 const MainLayout = () => {
     const {style, trigger} = useBoop({rotation: 15});
@@ -27,11 +27,13 @@ const MainLayout = () => {
         }, 100);
     }, [location]);
 
+    const theme = useTheme();
+    const desktopDisplay = useMediaQuery(theme.breakpoints.up('md'));
     return (
         <Grid container className={utilities.goToBack} alignItems='stretch'>
             <Grid item sm={12} md={5} container style={{marginTop: '2em'}} justify='space-between'
                   alignItems='flex-start' alignContent='flex-start'>
-                <Hidden mdUp>
+                {!desktopDisplay &&
                     <Grid item xs={3} container justify='center' alignItems='center'>
                         <Link to='/menu'>
                             <IconButton onMouseEnter={trigger} onTouchStart={trigger}>
@@ -41,7 +43,7 @@ const MainLayout = () => {
                             </IconButton>
                         </Link>
                     </Grid>
-                </Hidden>
+                }
                 <Grid item xs={9} sm={6} md={8} container alignItems='center' justify='center'>
                     <Grid item style={{display: 'flex'}}>
                         <Link to=''>
@@ -56,11 +58,11 @@ const MainLayout = () => {
                         <h1 className={`${utilities.noMargin} ${utilities.secondaryColor}`}>Dezaunay</h1>
                     </Grid>
                 </Grid>
-                <Hidden mdUp>
+                {!desktopDisplay &&
                     <Grid item sm={3}>
                     </Grid>
-                </Hidden>
-                <Hidden smDown>
+                }
+                {desktopDisplay &&
                     <Grid item style={{
                         display: 'flex',
                         height: '4.5em',
@@ -72,27 +74,27 @@ const MainLayout = () => {
                             Architecte &<br/> développeur<br/> indépendant
                         </div>
                     </Grid>
-                </Hidden>
-                <Hidden mdUp>
+                }
+                {!desktopDisplay &&
                     <Grid item xs={12} container justify='center'>
                         <div
                             className={`${utilities.noMargin} ${utilities.primaryColor} ${utilities.secondaryFont}`}>Architecte
                             & développeur indépendant
                         </div>
                     </Grid>
-                </Hidden>
+                }
                 <Grid container alignItems='flex-start' >
                     <Bio></Bio>
-                    <Hidden mdUp>
+                    {!desktopDisplay &&
                         <div style={{backgroundColor: 'var(--backgroundPrimaryColor)'}}>
                             <Counseling/>
                             <Portfolio/>
                             <Contact/>
                         </div>
-                    </Hidden>
+                    }
                 </Grid>
             </Grid>
-            <Hidden smDown>
+            {desktopDisplay &&
                 <Grid item md={7} style={{
                     backgroundColor: 'var(--backgroundPrimaryColor)',
                     minHeight: '100vh',
@@ -114,7 +116,7 @@ const MainLayout = () => {
                         </Route>
                     </Switch>
                 </Grid>
-            </Hidden>
+            }
         </Grid>
     );
 };
